@@ -4,7 +4,7 @@ const placeSchema = defineCollection({
   schema: z.object({
     title: z.string(),
     summary: z.string(),
-    "featured-image": z.string(),
+    featuredImage: z.string(),
   }),
 });
 
