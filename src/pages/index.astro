@@ -1,5 +1,28 @@
 ---
 import Layout from "@/layouts/layout.astro";
+import { Img } from "astro-imagetools/components";
 ---
 
-<Layout>Home</Layout>
+<Layout>
+  <!-- Hero Section -->
+  <section class="h-screen max-h-[600px] relative">
+    <!-- Background Image -->
+    <Img src="/images/hero-bg.png" alt="" />
+
+    <!-- Wave -->
+    <div class="w-full absolute bottom-0 translate-y-1/2">
+      <img
+        class="w-full max-h-[180px] object-cover"
+        src="/images/wave.svg"
+        alt=""
+      />
+      <h1
+        class="w-full text-[#CCE919] text-center absolute top-1/2 -translate-y-1/4 font-alex text-5xl"
+      >
+        Explore Destinations and Invite Friends & Plan Together
+      </h1>
+    </div>
+  </section>
+
+  <section></section>
+</Layout>
