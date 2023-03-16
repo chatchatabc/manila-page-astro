@@ -1,0 +1,13 @@
+import { defineCollection, z } from "astro:content";
+
+const placeSchema = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    "featured-image": z.string(),
+  }),
+});
+
+export const collections = {
+  places: placeSchema,
+};
