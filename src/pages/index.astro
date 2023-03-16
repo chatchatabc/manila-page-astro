@@ -1,6 +1,9 @@
 ---
 import Layout from "@/layouts/layout.astro";
 import { Img } from "astro-imagetools/components";
+import { getCollection } from "astro:content";
+
+const placesCollection = await getCollection("places");
 ---
 
 <Layout>
@@ -10,7 +13,7 @@ import { Img } from "astro-imagetools/components";
     <Img src="/images/hero-bg.png" alt="" />
 
     <!-- Wave -->
-    <div class="w-full absolute bottom-0 translate-y-1/2">
+    <div class="w-full absolute bottom-0 translate-y-1/2 z-[1]">
       <img
         class="w-full max-h-[180px] object-cover"
         src="/images/wave.svg"
@@ -24,5 +27,63 @@ import { Img } from "astro-imagetools/components";
     </div>
   </section>
 
-  <section></section>
+  <section class="relative pt-24">
+    <div class="mx-auto container relative">
+      <div
+        class="bg-[#BFD7EA] h-24 absolute w-[125%] top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-[50%]"
+      >
+      </div>
+      <div class="flex">
+        {
+          placesCollection.map((place) => {
+            const { title, summary, featuredImage } = place.data;
+            return (
+              <figure class="w-1/4 p-1">
+                <div class="h-96">
+                  <Img
+                    src={`/images/places/${featuredImage}.png`}
+                    alt={title}
+                  />
+                </div>
+                <figcaption class="bg-[#ABC0D1] px-4 py-16">
+                  <section class="flex justify-center space-x-4">
+                    <div class="flex space-x-2">
+                      <img
+                        class="w-6 h-6"
+                        src="/images/share.svg"
+                        alt="Share icon"
+                      />
+                      <span>300</span>
+                    </div>
+
+                    <div class="flex space-x-2">
+                      <img
+                        class="w-6 h-6"
+                        src="/images/heart.svg"
+                        alt="Share icon"
+                      />
+                      <span>128</span>
+                    </div>
+                  </section>
+                  <header class="mt-2">
+                    <h3 class="text-center text-lg">{title}</h3>
+                  </header>
+                  <p>{summary}</p>
+                </figcaption>
+              </figure>
+            );
+          })
+        }
+      </div>
+      <div
+        class="h-24 rounded-[50%] w-[125%] top-96 left-1/2 -translate-x-1/2 absolute mx-auto bg-[#BFD7EA] -translate-y-1/2"
+      >
+        <h2
+          class="text-center absolute top-1/2 -translate-y-1/2 w-full text-7xl font-alex text-[#264F6E]"
+        >
+          Places to Visit
+        </h2>
+      </div>
+    </div>
+  </section>
 </Layout>
