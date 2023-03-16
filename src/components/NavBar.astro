@@ -1,0 +1,53 @@
+---
+const links = [
+  {
+    href: "/",
+    name: "Home",
+  },
+  {
+    href: "/places-to-visit",
+    name: "Places to Visit",
+  },
+  {
+    href: "/events-and-festivals",
+    name: "Events & Festivals",
+  },
+  {
+    href: "/food-and-drink",
+    name: "Food & Drink",
+  },
+  {
+    href: "/day-trips",
+    name: "Day Trips",
+  },
+  {
+    href: "/neighbourhoods",
+    name: "Neighbourhoods",
+  },
+  {
+    href: "/contact-us",
+    name: "Contact Us",
+  },
+];
+---
+
+<header class="bg-[#BFD7EA]">
+  <div class="container mx-auto px-4 lg:px-8">
+    <ul class="flex justify-center">
+      {
+        links.map((link) => {
+          return (
+            <li>
+              <a
+                class="block py-2 px-4 hover:bg-[#5C97BF] hover:text-white"
+                href={link.href}
+              >
+                {link.name}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</header>
