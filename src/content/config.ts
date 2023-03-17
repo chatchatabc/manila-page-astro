@@ -10,4 +10,5 @@ const placeSchema = defineCollection({
 
 export const collections = {
   places: placeSchema,
+  trips: placeSchema,
 };
