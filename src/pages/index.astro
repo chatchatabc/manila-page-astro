@@ -4,6 +4,7 @@ import { Img } from "astro-imagetools/components";
 import { getCollection } from "astro:content";
 
 const placesCollection = await getCollection("places");
+const tripsCollection = await getCollection("trips");
 ---
 
 <Layout>
@@ -191,6 +192,81 @@ const placesCollection = await getCollection("places");
           </div>
         </div>
       </section>
+    </section>
+  </section>
+
+  <!-- TODO: Make the foods and drinks section -->
+
+  <!-- Day Trips Section -->
+  <section class="container mx-auto mt-16 px-4 lg:px-8">
+    <header class="relative">
+      <!-- background -->
+      <div class="h-56 rounded-3xl overflow-hidden">
+        <Img src="/images/day-trips-bg.png" alt="" />
+      </div>
+      <h1
+        class="shadow-xl w-2/3 mx-auto text-center bottom-0 translate-y-1/2 text-[#264F6E] bg-[#BFD7EA] rounded-3xl absolute py-8 left-0 right-0 text-7xl font-alex"
+      >
+        Day Trips
+      </h1>
+    </header>
+
+    <!-- 1st half -->
+    <section class="flex mt-28">
+      {
+        [...tripsCollection].splice(0, 3).map((trip, index) => {
+          const { title, summary, featuredImage } = trip.data;
+          return (
+            <article class={`${index ? "w-1/4" : "w-1/2"}`}>
+              <figure class="px-2">
+                <div
+                  class={`h-64 ${index ? "rounded-t-3xl overflow-hidden" : ""}`}
+                >
+                  <Img src={featuredImage} alt={title} />
+                </div>
+                <figcaption class="px-2 w-3/4 mx-auto bg-white relative bottom-10 rounded-t-xl shadow">
+                  <header class="border-b border-dashed border-black">
+                    <h2 class="text-center font-medium text-xl">Test</h2>
+                  </header>
+                  <p title={summary} class="p-1 line-clamp-4">
+                    {summary}
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+          );
+        })
+      }
+    </section>
+
+    <!-- 2nd Half -->
+    <section class="flex mt-4">
+      {
+        [...tripsCollection].splice(3, 3).map((trip, index) => {
+          const { title, summary, featuredImage } = trip.data;
+          return (
+            <article class={`${index < 2 ? "w-1/4" : "w-1/2"}`}>
+              <figure class="px-2">
+                <div
+                  class={`h-64 ${
+                    index < 2 ? "rounded-t-3xl overflow-hidden" : ""
+                  }`}
+                >
+                  <Img src={featuredImage} alt={title} />
+                </div>
+                <figcaption class="px-2 w-3/4 mx-auto bg-white relative bottom-10 rounded-t-xl shadow">
+                  <header class="border-b border-dashed border-black">
+                    <h2 class="text-center font-medium text-xl">Test</h2>
+                  </header>
+                  <p title={summary} class="p-1 line-clamp-4">
+                    {summary}
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+          );
+        })
+      }
     </section>
   </section>
 </Layout>
