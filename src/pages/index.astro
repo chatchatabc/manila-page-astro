@@ -5,6 +5,23 @@ import { getCollection } from "astro:content";
 
 const placesCollection = await getCollection("places");
 const tripsCollection = await getCollection("trips");
+const places = [
+  "Quezon City",
+  "Caloocan",
+  "Las Piñas",
+  "Makati",
+  "Malabon",
+  "Mandaluyong",
+  "Marikina",
+  "Valenzuela",
+  "Taguig",
+  "San Juan",
+  "Pasig",
+  "Pasay",
+  "Parañaque",
+  "Navotas",
+  "Muntinlupa",
+];
 ---
 
 <Layout>
@@ -30,7 +47,7 @@ const tripsCollection = await getCollection("trips");
 
   <!-- Places to Visit -->
   <section class="relative pt-24">
-    <div class="mx-auto container relative">
+    <div class="mx-auto container relative overflow-x-hidden">
       <div
         class="bg-[#BFD7EA] h-24 absolute w-[125%] top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-[50%]"
       >
@@ -96,7 +113,7 @@ const tripsCollection = await getCollection("trips");
         Events and Festivals in <span class="text-white">January</span>
       </h1>
     </header>
-    <section class="flex container mx-auto mt-8">
+    <section class="flex container mx-auto mt-8 px-4 lg:px-8">
       <!-- Left -->
       <section class="flex w-1/2">
         <!-- Left -->
@@ -267,6 +284,114 @@ const tripsCollection = await getCollection("trips");
           );
         })
       }
+    </section>
+  </section>
+
+  <!-- Neighborhoods -->
+  <section class="mx-auto container mt-8 px-4 lg:px-8">
+    <header>
+      <h1 class="text-7xl text-[#264F6E] font-alex">Neighborhoods</h1>
+    </header>
+    <section class="flex relative">
+      <div class="absolute w-full h-full z-[-1]">
+        <Img src="/images/neighborhoods-bg.jpg" alt="" />
+      </div>
+      <section
+        class="w-1/2 flex font-bold text-white bg-gray-500 bg-opacity-50"
+      >
+        <div class="relative">
+          <img
+            class="w-full h-full object-contain"
+            src="/images/map2.png"
+            alt="map"
+          />
+
+          <div class="absolute top-[6%] left-[55%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Caloocan</p>
+          </div>
+
+          <div class="absolute top-[25%] left-[55%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Quezon City</p>
+          </div>
+
+          <div class="absolute top-[30%] left-[75%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Marikina</p>
+          </div>
+
+          <div class="absolute top-[46%] left-[53%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Mandaluyong</p>
+          </div>
+
+          <div class="absolute top-[18%] left-[35%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Valenzuela</p>
+          </div>
+
+          <div class="absolute top-[25%] left-[28%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Malabon</p>
+          </div>
+
+          <div class="absolute top-[40%] left-[35%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Manila</p>
+          </div>
+
+          <div class="absolute top-[51%] left-[46%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Makati</p>
+          </div>
+
+          <div class="absolute top-[44%] left-[70%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Pasig</p>
+          </div>
+
+          <div class="absolute top-[57%] left-[55%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Taguig</p>
+          </div>
+
+          <div class="absolute top-[65%] left-[45%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Paranaque</p>
+          </div>
+
+          <div class="absolute top-[75%] left-[37%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Las Pinas</p>
+          </div>
+
+          <div class="absolute top-[85%] left-[50%] group">
+            <div class="h-4 w-4 bg-black rounded-full"></div>
+            <p class="z-[1]">Muntinlupa</p>
+          </div>
+        </div>
+      </section>
+      <section class="w-1/2">
+        <article class="p-8">
+          <p class="bg-[#2B5F8F] p-2 text-white rounded-xl">
+            Manila is the capital city of the Philippines and is known for its
+            rich history, diverse culture, and vibrant atmosphere. It is a
+            bustling metropolis that serves as the economic, political, and
+            cultural center of the country. Manila is a city that seamlessly
+            blends its colonial past with its modern present, resulting in a
+            unique blend of old and new. The city boasts of numerous historical
+            landmarks, world-class museums, delicious cuisine, exciting
+            nightlife, and beautiful parks. With its friendly people and warm
+            climate, Manila is a popular destination for tourists from all over
+            the world.
+          </p>
+          <button
+            class="mx-auto block w-fit py-2 px-4 mt-2 bg-[#A426B8] text-white rounded-md"
+            >Explore Manila</button
+          >
+        </article>
+      </section>
     </section>
   </section>
 </Layout>
