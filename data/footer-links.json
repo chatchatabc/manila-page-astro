@@ -1,0 +1,65 @@
+{
+  "popular": [
+    { "href": "https://davao.page", "name": "Davao Page" },
+    { "href": "https://travel.davao.page", "name": "Davao Travel" },
+    { "href": "https://chatchatabc.com", "name": "ChatChatABC" }
+  ],
+  "helpful": [
+    { "href": "/about-us", "name": "About Us" },
+    { "href": "/contact-us", "name": "Contact Us" },
+    { "href": "/faq", "name": "FAQ" },
+    { "href": "/gov", "name": "Gov Information" }
+  ],
+  "sitemap": [
+    {
+      "href": "/",
+      "name": "Home"
+    },
+    {
+      "href": "/places-to-visit",
+      "name": "Places to Visit"
+    },
+    {
+      "href": "/events-and-festivals",
+      "name": "Events & Festivals"
+    },
+    {
+      "href": "/food-and-drink",
+      "name": "Food & Drink"
+    },
+    {
+      "href": "/day-trips",
+      "name": "Day Trips"
+    },
+    {
+      "href": "/neighbourhoods",
+      "name": "Neighbourhoods"
+    },
+    {
+      "href": "/contact-us",
+      "name": "Contact Us"
+    }
+  ],
+  "social": [
+    {
+      "name": "Facebook",
+      "href": "https://facebook.com",
+      "icon": "/images/social/facebook.png"
+    },
+    {
+      "name": "Instagram",
+      "href": "https://instagram.com",
+      "icon": "/images/social/instagram.png"
+    },
+    {
+      "name": "WeChat",
+      "href": "https://wechat.com",
+      "icon": "/images/social/wechat.png"
+    },
+    {
+      "name": "Twitter",
+      "href": "https://twitter.com",
+      "icon": "/images/social/twitter.png"
+    }
+  ]
+}
