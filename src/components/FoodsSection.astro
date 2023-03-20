@@ -1,0 +1,102 @@
+---
+import { getCollection } from "astro:content";
+import { Img } from "astro-imagetools/components";
+
+const foodsCollection = await getCollection("foods-and-drinks");
+const margins: Record<number, string> = {
+  0: "0",
+  1: "50px",
+  2: "100px",
+  3: "50px",
+  4: "0px",
+};
+const images: Record<number, number> = {
+  0: 2,
+  1: 1,
+  2: 4,
+  3: 1,
+  4: 2,
+};
+const widths: Record<number, string> = {
+  0: "50%",
+  1: "100%",
+  2: "50%",
+  3: "100%",
+  4: "50%",
+};
+---
+
+<section>
+  <div
+    class="absolute top-1/2 -translate-y-1/2 left-0 h-fit container mx-auto right-0"
+  >
+    <div class="flex justify-center">
+      {
+        [...Array(5)].map((_, index) => {
+          return (
+            <div
+              class={`flex items-end flex-1 flex-wrap`}
+              style={`margin-bottom: ${margins[index]};`}
+            >
+              {[...Array(images[index])].map((_1, index1) => {
+                return (
+                  <div
+                    class="w-1/2 aspect-square p-2"
+                    style={`width: ${widths[index]}`}
+                  >
+                    <Img
+                      src={foodsCollection[index + index1].data.featuredImage}
+                      alt={foodsCollection[index + index1].data.title}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <div class="flex justify-center">
+      {
+        [...Array(5)].map((_, index) => {
+          return (
+            <div
+              class={`flex items-start flex-1 flex-wrap`}
+              style={`margin-top: ${margins[index]};`}
+            >
+              {[...Array(images[index])].map((_1, index1) => {
+                return (
+                  <div
+                    class="w-1/2 aspect-square p-2"
+                    style={`width: ${widths[index]}`}
+                  >
+                    <Img
+                      src={foodsCollection[index + index1].data.featuredImage}
+                      alt={foodsCollection[index + index1].data.title}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+  <header
+    class="absolute -translate-y-1/2 top-1/2 left-0 right-0 mx-auto w-1/2 py-96"
+  >
+    <div class="absolute top-0 left-0 w-full h-full z-[-1]">
+      <img
+        class="w-full h-full object-contain"
+        src="/images/cloud.svg"
+        alt=""
+      />
+    </div>
+    <h1 class="text-center text-[#264F6E] text-7xl font-alex">
+      Foods and Drinks
+    </h1>
+  </header>
+  <section></section>
+</section>
