@@ -1,0 +1,427 @@
+---
+import { getCollection } from "astro:content";
+
+const foodsCollection = await getCollection("foods-and-drinks");
+const foods = foodsCollection.map((food) => {
+  return food.data.featuredImage;
+});
+---
+
+<section>
+  <svg class="w-full" viewBox="0 0 1187 880" fill="none">
+    <rect x="96" y="154" width="64" height="66" fill="url(#pattern0)"></rect>
+    <rect x="43" y="240" width="93" height="150" fill="url(#pattern1)"></rect>
+    <rect x="157" y="239" width="142" height="151" fill="url(#pattern2)"></rect>
+    <rect x="186" y="117" width="113" height="103" fill="url(#pattern3)"></rect>
+    <rect y="411" width="299" height="169" fill="url(#pattern4)"></rect>
+    <rect x="210" y="600" width="89" height="178" fill="url(#pattern5)"></rect>
+    <rect x="63" y="598" width="128" height="100" fill="url(#pattern6)"></rect>
+    <rect x="317" y="72" width="147" height="108" fill="url(#pattern7)"></rect>
+    <rect x="319" y="201" width="145" height="108" fill="url(#pattern8)"></rect>
+    <rect x="482" width="122" height="126" fill="url(#pattern9)"></rect>
+    <rect x="482" y="141" width="240" height="168" fill="url(#pattern10)"
+    ></rect>
+    <rect x="622" y="34" width="100" height="92" fill="url(#pattern11)"></rect>
+    <rect x="736" y="70" width="88" height="110" fill="url(#pattern12)"></rect>
+    <rect x="737" y="201" width="254" height="108" fill="url(#pattern13)"
+    ></rect>
+    <rect x="841" y="110" width="150" height="70" fill="url(#pattern14)"></rect>
+    <rect x="320" y="596" width="189" height="236" fill="url(#pattern15)"
+    ></rect>
+    <rect x="531" y="603" width="105" height="104" fill="url(#pattern16)"
+    ></rect>
+    <rect x="530" y="726" width="106" height="154" fill="url(#pattern17)"
+    ></rect>
+    <rect x="657" y="598" width="222" height="148" fill="url(#pattern18)"
+    ></rect>
+    <rect x="657" y="766" width="80" height="87" fill="url(#pattern19)"></rect>
+    <rect x="758" y="768" width="121" height="85" fill="url(#pattern20)"></rect>
+    <rect x="897" y="564" width="114" height="189" fill="url(#pattern21)"
+    ></rect>
+    <rect x="899" y="442" width="288" height="104" fill="url(#pattern22)"
+    ></rect>
+    <rect x="1036" y="563" width="99" height="144" fill="url(#pattern23)"
+    ></rect>
+    <rect x="1011" y="272" width="142" height="146" fill="url(#pattern24)"
+    ></rect>
+    <rect x="1011" y="171" width="101" height="84" fill="url(#pattern25)"
+    ></rect>
+    <defs>
+      <!-- Looping breaks when I introduce an <image> tag inside <pattern>. This is a workaround. -->
+      <pattern
+        id={`pattern1`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[0]}
+        />
+      </pattern>
+      <pattern
+        id={`pattern2`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[1]}
+        />
+      </pattern><pattern
+        id={`pattern3`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[2]}
+        />
+      </pattern><pattern
+        id={`pattern4`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[3]}
+        />
+      </pattern><pattern
+        id={`pattern5`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[4]}
+        />
+      </pattern><pattern
+        id={`pattern6`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[5]}
+        />
+      </pattern><pattern
+        id={`pattern7`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[6]}
+        />
+      </pattern><pattern
+        id={`pattern8`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[7]}
+        />
+      </pattern><pattern
+        id={`pattern9`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[8]}
+        />
+      </pattern><pattern
+        id={`pattern10`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[9]}
+        />
+      </pattern><pattern
+        id={`pattern11`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[10]}
+        />
+      </pattern><pattern
+        id={`pattern12`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[11]}
+        />
+      </pattern><pattern
+        id={`pattern13`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[12]}
+        />
+      </pattern><pattern
+        id={`pattern14`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[13]}
+        />
+      </pattern><pattern
+        id={`pattern15`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[14]}
+        />
+      </pattern><pattern
+        id={`pattern16`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[15]}
+        />
+      </pattern><pattern
+        id={`pattern17`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[16]}
+        />
+      </pattern><pattern
+        id={`pattern18`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[17]}
+        />
+      </pattern><pattern
+        id={`pattern19`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[18]}
+        />
+      </pattern><pattern
+        id={`pattern20`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[19]}
+        />
+      </pattern><pattern
+        id={`pattern21`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[20]}
+        />
+      </pattern><pattern
+        id={`pattern22`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[21]}
+        />
+      </pattern><pattern
+        id={`pattern23`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[22]}
+        />
+      </pattern><pattern
+        id={`pattern24`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[23]}
+        />
+      </pattern><pattern
+        id={`pattern25`}
+        height="100%"
+        width="100%"
+        patternContentUnits="objectBoundingBox"
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <image
+          height="1"
+          width="1"
+          preserveAspectRatio="xMidYMid slice"
+          xlink:href={foods[24]}
+        />
+      </pattern>
+    </defs>
+  </svg>
+
+  <section
+    class="absolute top-1/2 -translate-y-1/2 p-16 mx-auto left-0 right-0"
+  >
+    <div class="absolute top-0 left-0 w-full h-full z-[-1]">
+      <img src="/images/cloud.svg" alt="" class="h-full w-full" />
+    </div>
+    <article class="w-1/2 mx-auto">
+      <header>
+        <h1 class="text-[#264F6E] text-7xl font-alex text-center">
+          Foods & Drinks
+        </h1>
+      </header>
+      <p>
+        Manila's cuisine is a reflection of its rich history and cultural
+        diversity, influenced by Spanish, Chinese, Malay, and American culinary
+        traditions. The result is a vibrant and flavorful cuisine that attracts
+        foodies from around the world. From hearty stews and grilled meats to
+        fresh seafood and tropical fruits, Manila has something for every palate
+      </p>
+    </article>
+  </section>
+</section>
