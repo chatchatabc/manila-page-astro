@@ -21,8 +21,8 @@ const links = [
     name: "Day Trips",
   },
   {
-    href: "#neighbourhoods",
-    name: "Neighbourhoods",
+    href: "#neighborhoods",
+    name: "Neighborhoods",
   },
   {
     href: "#contact-us",
@@ -108,6 +108,7 @@ const links = [
   const nav = document.querySelector("#mobile-nav-menu")!;
   const bg = document.querySelector("#mobile-nav-menu-bg")!;
   const button = document.querySelector("button")!;
+  const links = document.querySelectorAll("a")!;
 
   const navOpen = () => {
     nav.classList.remove("-translate-x-full");
@@ -131,5 +132,11 @@ const links = [
 
   bg.addEventListener("click", () => {
     navClose();
+  });
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      navClose();
+    });
   });
 </script>
