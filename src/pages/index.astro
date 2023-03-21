@@ -203,22 +203,28 @@ const tripsCollection = await getCollection("trips");
         <Img src="/images/day-trips-bg.png" alt="" />
       </div>
       <h1
-        class="shadow-xl w-2/3 mx-auto text-center bottom-0 translate-y-1/2 text-[#264F6E] bg-[#BFD7EA] rounded-3xl absolute py-8 left-0 right-0 text-7xl font-alex"
+        class="shadow-xl w-2/3 mx-auto text-center bottom-0 translate-y-1/2 text-[#264F6E] bg-[#BFD7EA] rounded-3xl absolute py-8 left-0 right-0 font-alex text-5xl lg:text-7xl"
       >
         Day Trips
       </h1>
     </header>
 
     <!-- 1st half -->
-    <section class="flex mt-28">
+    <section class="flex flex-wrap mt-28">
       {
         [...tripsCollection].splice(0, 3).map((trip, index) => {
           const { title, summary, featuredImage } = trip.data;
           return (
-            <article class={`${index ? "w-1/4" : "w-1/2"}`}>
+            <article
+              class={`${
+                index ? "w-full md:w-1/2 lg:w-1/4" : "w-full lg:w-1/2"
+              }`}
+            >
               <figure class="px-2">
                 <div
-                  class={`h-64 ${index ? "rounded-t-3xl overflow-hidden" : ""}`}
+                  class={`h-64 ${
+                    index ? "overflow-hidden md:rounded-t-3xl" : ""
+                  }`}
                 >
                   <Img src={featuredImage} alt={title} />
                 </div>
@@ -238,16 +244,22 @@ const tripsCollection = await getCollection("trips");
     </section>
 
     <!-- 2nd Half -->
-    <section class="flex mt-4">
+    <section class="flex flex-row-reverse flex-wrap lg:flex-row mt-4">
       {
         [...tripsCollection].splice(3, 3).map((trip, index) => {
           const { title, summary, featuredImage } = trip.data;
           return (
-            <article class={`${index < 2 ? "w-1/4" : "w-1/2"}`}>
+            <article
+              class={`${
+                index
+                  ? "w-full md:w-1/2 lg:w-1/4"
+                  : "w-full lg:w-1/2 lg:order-3"
+              }`}
+            >
               <figure class="px-2">
                 <div
                   class={`h-64 ${
-                    index < 2 ? "rounded-t-3xl overflow-hidden" : ""
+                    index < 2 ? "overflow-hidden md:rounded-t-3xl" : ""
                   }`}
                 >
                   <Img src={featuredImage} alt={title} />
