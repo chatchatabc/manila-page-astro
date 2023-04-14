@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         alex: ["Alex Brush", "cursive"],
       },
+      colors: {
+        background: "#BFD7EA",
+      },
     },
   },
   plugins: [require("@tailwindcss/line-clamp")],
