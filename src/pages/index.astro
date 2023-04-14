@@ -33,45 +33,47 @@ const tripsCollection = await getCollection("trips");
         class="bg-[#BFD7EA] h-24 absolute w-[125%] top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-[50%]"
       >
       </div>
-      <div class="flex">
+      <ul class="flex snap-x overflow-x-auto">
         {
           placesCollection.map((place) => {
             const { title, summary, featuredImage } = place.data;
             return (
-              <figure class="w-1/4 p-1">
-                <div class="h-96">
-                  <Img src={`${featuredImage}`} alt={title} />
-                </div>
-                <figcaption class="bg-[#ABC0D1] px-4 py-16">
-                  <section class="flex justify-center space-x-4">
-                    <div class="flex space-x-2">
-                      <img
-                        class="w-6 h-6"
-                        src="/images/share.svg"
-                        alt="Share icon"
-                      />
-                      <span>300</span>
-                    </div>
+              <li class="snap-center w-full flex-shrink-0 p-1 md:w-1/2 lg:w-1/4">
+                <figure>
+                  <div class="h-96">
+                    <Img src={`${featuredImage}`} alt={title} />
+                  </div>
+                  <figcaption class="bg-[#ABC0D1] px-4 py-16">
+                    <section class="flex justify-center space-x-4">
+                      <div class="flex space-x-2">
+                        <img
+                          class="w-6 h-6"
+                          src="/images/share.svg"
+                          alt="Share icon"
+                        />
+                        <span>300</span>
+                      </div>
 
-                    <div class="flex space-x-2">
-                      <img
-                        class="w-6 h-6"
-                        src="/images/heart.svg"
-                        alt="Share icon"
-                      />
-                      <span>128</span>
-                    </div>
-                  </section>
-                  <header class="mt-2">
-                    <h3 class="text-center text-lg">{title}</h3>
-                  </header>
-                  <p>{summary}</p>
-                </figcaption>
-              </figure>
+                      <div class="flex space-x-2">
+                        <img
+                          class="w-6 h-6"
+                          src="/images/heart.svg"
+                          alt="Share icon"
+                        />
+                        <span>128</span>
+                      </div>
+                    </section>
+                    <header class="mt-2">
+                      <h3 class="text-center text-lg">{title}</h3>
+                    </header>
+                    <p>{summary}</p>
+                  </figcaption>
+                </figure>
+              </li>
             );
           })
         }
-      </div>
+      </ul>
       <div
         class="h-24 rounded-[50%] w-[125%] top-96 left-1/2 -translate-x-1/2 absolute mx-auto bg-[#BFD7EA] -translate-y-1/2"
       >
