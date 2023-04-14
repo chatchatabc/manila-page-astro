@@ -286,12 +286,33 @@ const tripsCollection = await getCollection("trips");
     <header>
       <h1 class="text-7xl text-[#264F6E] font-alex">Neighborhoods</h1>
     </header>
-    <section class="flex relative">
+    <section class="flex flex-row-reverse relative flex-wrap">
       <div class="absolute w-full h-full z-[-1]">
         <Img src="/images/neighborhoods-bg.jpg" alt="" />
       </div>
+
+      <section class="w-full md:w-1/2">
+        <article class="p-8">
+          <p class="bg-[#2B5F8F] p-2 text-white rounded-xl">
+            Manila is the capital city of the Philippines and is known for its
+            rich history, diverse culture, and vibrant atmosphere. It is a
+            bustling metropolis that serves as the economic, political, and
+            cultural center of the country. Manila is a city that seamlessly
+            blends its colonial past with its modern present, resulting in a
+            unique blend of old and new. The city boasts of numerous historical
+            landmarks, world-class museums, delicious cuisine, exciting
+            nightlife, and beautiful parks. With its friendly people and warm
+            climate, Manila is a popular destination for tourists from all over
+            the world.
+          </p>
+          <button
+            class="mx-auto block w-fit py-2 px-4 mt-2 bg-[#A426B8] text-white rounded-md"
+            >Explore Manila</button
+          >
+        </article>
+      </section>
       <section
-        class="w-1/2 flex font-bold text-white bg-gray-500 bg-opacity-50"
+        class="flex font-bold text-white bg-gray-500 bg-opacity-50 w-full md:w-1/2"
       >
         <div class="relative">
           <img
@@ -365,26 +386,6 @@ const tripsCollection = await getCollection("trips");
             <p class="z-[1]">Muntinlupa</p>
           </div>
         </div>
-      </section>
-      <section class="w-1/2">
-        <article class="p-8">
-          <p class="bg-[#2B5F8F] p-2 text-white rounded-xl">
-            Manila is the capital city of the Philippines and is known for its
-            rich history, diverse culture, and vibrant atmosphere. It is a
-            bustling metropolis that serves as the economic, political, and
-            cultural center of the country. Manila is a city that seamlessly
-            blends its colonial past with its modern present, resulting in a
-            unique blend of old and new. The city boasts of numerous historical
-            landmarks, world-class museums, delicious cuisine, exciting
-            nightlife, and beautiful parks. With its friendly people and warm
-            climate, Manila is a popular destination for tourists from all over
-            the world.
-          </p>
-          <button
-            class="mx-auto block w-fit py-2 px-4 mt-2 bg-[#A426B8] text-white rounded-md"
-            >Explore Manila</button
-          >
-        </article>
       </section>
     </section>
   </section>
