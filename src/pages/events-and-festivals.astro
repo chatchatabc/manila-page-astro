@@ -1,0 +1,95 @@
+---
+import Layout from "@layouts/layout.astro";
+import { Img } from "astro-imagetools/components";
+---
+
+<Layout>
+  <section class="relative py-12">
+    <!-- Background -->
+    <div class="absolute top-0 left-0 h-full w-full">
+      <Img src="/images/hero-bg.jpg" alt="" />
+      <div class="absolute w-full h-full top-0 left-0 opacity-50 bg-white">
+      </div>
+    </div>
+
+    <!-- Content -->
+    <figure
+      class="relative items-center container mx-auto px-4 md:flex-row-reverse md:flex lg:px-8"
+    >
+      <div
+        class="w-full relative rounded-xl overflow-hidden pb-[56%] md:w-1/2 lg:pb-[30%]"
+      >
+        <div class="absolute left-0 top-0 w-full h-full">
+          <Img src="/images/hero-bg.jpg" alt="" />
+        </div>
+      </div>
+
+      <figcaption class="w-full py-8 md:w-1/2 lg:px-8">
+        <header>
+          <h1 class="font-alex text-5xl">Featured Event</h1>
+        </header>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+          dolore quod libero odio inventore. Quam, enim nisi! Officia voluptates
+          sint neque porro, exercitationem dolore mollitia, tempore quis, in
+          quidem amet.
+        </p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- Timeline -->
+  <section class="continar mx-auto px-4 lg:px-8">
+    <header>
+      <h1 class="text-center font-alex text-7xl py-8">Festival and Events</h1>
+    </header>
+
+    <section class="relative">
+      <!-- Middle line -->
+      <div
+        class="bg-gray-500 rounded-full w-1 absolute h-full top-0 left-1/2 -translate-x-1/2"
+      >
+      </div>
+
+      <ul>
+        {
+          [...Array(5)].map((item, index) => {
+            return (
+              <li class={`p-2 relative ${index % 2 === 0 ? "text-right" : ""}`}>
+                <div
+                  class={`bg-gray-500 w-6 absolute h-6 rounded-full top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2`}
+                />
+                <figure
+                  class={`flex items-center ${
+                    index % 2 === 0 ? "flex-row-reverse" : ""
+                  }`}
+                >
+                  <div class="w-1/2 p-8">
+                    <div class="relative pb-[56%] rounded-xl overflow-hidden">
+                      <div class="absolute top-0 left-0 h-full w-full">
+                        <Img src="/images/hero-bg.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <figcaption class="p-8 w-1/2">
+                    <header>
+                      <h2 class="text-5xl font-alex">Lorem Ipsum Hehee</h2>
+                    </header>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deserunt facilis accusamus totam aut ducimus repellat
+                      sapiente perspiciatis reiciendis aspernatur ab, illum
+                      veniam praesentium, ut, necessitatibus excepturi dolorum
+                      sit laudantium voluptates.
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+  </section>
+</Layout>
