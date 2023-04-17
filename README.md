@@ -1,14 +1,18 @@
-# Astro Starter Kit: Minimal
+# Manila Page
 
-```
-npm create astro@latest -- --template minimal
-```
+Feel free to read the documentation if you have any problems or questions that you need to know about the project. The information here has been divided into multiple sections, in which explains all the necessary information that are needed for the project.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+# Tech Stack
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Here lies all the tools and libraries that are used to develop and build the Davao Page website.
+
+- Astro: https://astro.build
+- TailwindCSS: https://tailwindcss.com
+- Astro-ImageTools: https://github.com/RafidMuhymin/astro-imagetools
+- @astrojs/sitemap: https://docs.astro.build/en/guides/integrations-guide/sitemap/
+- Astro-Robots-Txt: https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt
+- NodeJS: https://nodejs.org/en/
+- TypeScript and JavaScript
 
 ## 🚀 Project Structure
 
@@ -22,12 +26,6 @@ Inside of your Astro project, you'll see the following folders and files:
 │       └── index.astro
 └── package.json
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -44,4 +42,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to contact [BoJoNVi](https://github.com/BoJoNVi) (me) through DingTalk or visit me at the workplace to have a thorough discussion about this project.
