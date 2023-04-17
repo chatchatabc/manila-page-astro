@@ -1,0 +1,111 @@
+---
+import Layout from "@layouts/layout.astro";
+import { Img } from "astro-imagetools/components";
+import type { map } from "astro/zod";
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="bg-white py-8">
+    <figure
+      class="flex items-center container mx-auto px-4 overflow-hidden lg:px-8"
+    >
+      <figcaption class="mx-auto w-2/5">
+        <header>
+          <h1 class="text-7xl font-alex">Food Title</h1>
+        </header>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quo
+          animi id culpa maiores illo incidunt aliquid necessitatibus iusto
+          ipsum dolorem, quos eum, eos dolore laudantium? Minima quidem
+          repudiandae officiis.
+        </p>
+      </figcaption>
+      <div class="flex w-2/5">
+        <div class="w-1/3 pt-64">
+          <div class="p-2">
+            <div class="relative pb-[125%] rounded-xl overflow-hidden">
+              <div class="absolute top-0 left-0 h-full w-full">
+                <Img src="/images/hero-bg.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-1/3 pt-32">
+          <div class="p-2">
+            <div class="relative pb-[125%] rounded-xl overflow-hidden">
+              <div class="absolute top-0 left-0 h-full w-full">
+                <Img src="/images/hero-bg.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="p-2">
+            <div class="relative pb-[125%] rounded-xl overflow-hidden">
+              <div class="absolute top-0 left-0 h-full w-full">
+                <Img src="/images/hero-bg.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-1/3">
+          <div class="p-2">
+            <div class="relative pb-[125%] rounded-xl overflow-hidden">
+              <div class="absolute top-0 left-0 h-full w-full">
+                <Img src="/images/hero-bg.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="p-2">
+            <div class="relative pb-[125%] rounded-xl overflow-hidden">
+              <div class="absolute top-0 left-0 h-full w-full">
+                <Img src="/images/hero-bg.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </figure>
+  </section>
+
+  <!-- Food Section -->
+  <section>
+    <header class="bg-blue-100 flex py-8 h-40">
+      <h1 class="text-5xl font-alex container mx-auto px-4 lg:px-8">
+        Type of Food
+      </h1>
+    </header>
+    <ul class="container mx-auto px-4 lg:px-8 flex -mt-16">
+      {
+        [...Array(3)].map((item, index) => {
+          return (
+            <li class="p-2 w-1/3">
+              <figure class="shadow-xl border border-black rounded-xl overflow-hidden">
+                <div class="relative pb-[50%] bg-gray-500">
+                  <div class="absolute top-0 left-0 h-full w-full">
+                    <Img src="/images/hero-bg.jpg" alt="" />
+                  </div>
+                </div>
+                <figcaption class="p-4 bg-white">
+                  <header>
+                    <h2 class="text-4xl font-alex">Lorem Ipsum Title</h2>
+                  </header>
+                  <p class="py-2">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Soluta, aspernatur voluptas? Numquam quo esse ex, suscipit
+                    tempora incidunt aspernatur optio id saepe, soluta minima
+                    officia? Qui eum a rem reprehenderit.
+                  </p>
+                  <button class="mt-2 px-4 py-1 bg-background rounded-full">
+                    Read more
+                  </button>
+                </figcaption>
+              </figure>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</Layout>
