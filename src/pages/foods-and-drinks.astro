@@ -1,14 +1,18 @@
 ---
 import Layout from "@layouts/layout.astro";
 import { Img } from "astro-imagetools/components";
-import type { map } from "astro/zod";
 ---
 
 <Layout>
   <!-- Hero Section -->
-  <section class="bg-white py-8">
+  <section class="bg-white py-8 relative">
+    <div class="absolute top-0 left-0 w-full h-full blur-sm">
+      <Img src="/images/foods-and-drinks/hero-bg.jpg" alt="" />
+      <div class="bg-white absolute h-full w-full top-0 left-0 opacity-70">
+      </div>
+    </div>
     <figure
-      class="flex items-center container mx-auto px-4 overflow-hidden lg:px-8"
+      class="relative flex items-center container mx-auto px-4 overflow-hidden lg:px-8"
     >
       <figcaption class="mx-auto w-2/5">
         <header>
