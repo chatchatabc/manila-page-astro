@@ -89,11 +89,50 @@ import { Img } from "astro-imagetools/components";
   <!-- Food Section -->
   <section>
     <header class="bg-blue-100 flex py-8 h-40">
-      <h1 class="text-5xl font-alex container mx-auto px-4 lg:px-8">
+      <h1 class="text-5xl font-alex max-w-7xl w-full mx-auto px-4 lg:px-8">
         Type of Food
       </h1>
     </header>
-    <ul class="container mx-auto px-4 lg:px-8 flex -mt-16">
+    <ul class="max-w-7xl pb-16 mx-auto px-4 lg:px-8 flex -mt-16">
+      {
+        [...Array(3)].map((item, index) => {
+          return (
+            <li class="p-2 w-1/3">
+              <figure class="shadow-xl border border-black rounded-xl overflow-hidden">
+                <div class="relative pb-[50%] bg-gray-500">
+                  <div class="absolute top-0 left-0 h-full w-full">
+                    <Img src="/images/hero-bg.jpg" alt="" />
+                  </div>
+                </div>
+                <figcaption class="p-4 bg-white">
+                  <header>
+                    <h2 class="text-4xl font-alex">Lorem Ipsum Title</h2>
+                  </header>
+                  <p class="py-2">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Soluta, aspernatur voluptas? Numquam quo esse ex, suscipit
+                    tempora incidunt aspernatur optio id saepe, soluta minima
+                    officia? Qui eum a rem reprehenderit.
+                  </p>
+                  <button class="mt-2 px-4 py-1 bg-background rounded-full">
+                    Read more
+                  </button>
+                </figcaption>
+              </figure>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+
+  <section>
+    <header class="bg-blue-100 flex py-8 h-40">
+      <h1 class="text-5xl font-alex max-w-7xl w-full mx-auto px-4 lg:px-8">
+        Type of Food
+      </h1>
+    </header>
+    <ul class="max-w-7xl pb-16 mx-auto px-4 lg:px-8 flex -mt-16">
       {
         [...Array(3)].map((item, index) => {
           return (
