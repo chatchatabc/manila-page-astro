@@ -7,6 +7,8 @@ module.exports = {
         alex: ["Alex Brush", "cursive"],
       },
       colors: {
+        primary: "#BFD7EA",
+        text: "#000",
         background: "#BFD7EA",
       },
     },
