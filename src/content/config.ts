@@ -5,6 +5,16 @@ const placeSchema = defineCollection({
     title: z.string(),
     summary: z.string(),
     featuredImage: z.string(),
+    location: z.string(),
+    categories: z.array(z.string()),
+  }),
+});
+
+const commonSchema = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    featuredImage: z.string(),
   }),
 });
 
@@ -20,7 +30,7 @@ const eventSchema = defineCollection({
 
 export const collections = {
   places: placeSchema,
-  trips: placeSchema,
-  "foods-and-drinks": placeSchema,
+  trips: commonSchema,
+  "foods-and-drinks": commonSchema,
   events: eventSchema,
 };
