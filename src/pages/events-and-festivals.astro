@@ -13,6 +13,7 @@ const featuredEvent = eventsCollection[0];
 ---
 
 <Layout>
+  <!-- Hero -->
   <section class="relative">
     <!-- Background -->
     <div class="absolute top-0 left-0 h-full w-full blur-sm">
@@ -45,18 +46,16 @@ const featuredEvent = eventsCollection[0];
     </figure>
   </section>
 
+  <h2 class="text-center bg-blue-100 font-alex text-6xl py-8">
+    Events and Festivals Timeline
+  </h2>
+
   <!-- Timeline -->
   <section class="container mx-auto px-4 lg:px-8">
-    <header>
-      <h1 class="text-center font-alex text-6xl py-8">
-        Events and Festivals Timeline
-      </h1>
-    </header>
-
     <section class="relative">
       <!-- Middle line -->
       <div
-        class="bg-gray-500 rounded-full w-1 absolute h-full top-0 left-1/2 -translate-x-1/2"
+        class="bg-blue-900 rounded-full w-1 absolute h-full top-0 left-1/2 -translate-x-1/2"
       >
       </div>
 
@@ -66,7 +65,7 @@ const featuredEvent = eventsCollection[0];
             return (
               <li class={`p-2 relative ${index % 2 === 0 ? "text-right" : ""}`}>
                 <div
-                  class={`bg-gray-500 w-6 absolute h-6 rounded-full top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2`}
+                  class={`bg-blue-900 w-6 absolute h-6 rounded-full top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2`}
                 />
                 <figure
                   class={`flex items-center ${
