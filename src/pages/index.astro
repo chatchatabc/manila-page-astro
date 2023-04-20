@@ -64,9 +64,12 @@ const tripsCollection = await getCollection("trips");
                       </div>
                     </section>
                     <header class="mt-2">
-                      <h3 class="text-center text-lg">{title}</h3>
+                      <h3 class="text-center text-xl font-medium">{title}</h3>
                     </header>
-                    <p>{summary}</p>
+                    <p class="line-clamp-4 text-gray-900">{summary}</p>
+                    <button class="px-4 py-1 bg-blue-500 text-white rounded-md mx-auto block w-fit mt-4">
+                      Read More
+                    </button>
                   </figcaption>
                 </figure>
               </li>
