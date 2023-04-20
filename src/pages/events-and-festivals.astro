@@ -1,6 +1,13 @@
 ---
 import Layout from "@layouts/layout.astro";
-import { Img } from "astro-imagetools/components";
+import { Img, Picture } from "astro-imagetools/components";
+import { getCollection } from "astro:content";
+
+const eventsCollection = await getCollection("events");
+
+eventsCollection.sort((a, b) => {
+  return new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
+});
 ---
 
 <Layout>
@@ -53,7 +60,7 @@ import { Img } from "astro-imagetools/components";
 
       <ul>
         {
-          [...Array(5)].map((item, index) => {
+          eventsCollection.map((item, index) => {
             return (
               <li class={`p-2 relative ${index % 2 === 0 ? "text-right" : ""}`}>
                 <div
@@ -67,22 +74,28 @@ import { Img } from "astro-imagetools/components";
                   <div class="w-1/2 p-8">
                     <div class="relative pb-[56%] rounded-xl overflow-hidden">
                       <div class="absolute top-0 left-0 h-full w-full">
-                        <Img src="/images/hero-bg.jpg" alt="" />
+                        <Picture
+                          src={item.data.featuredImage}
+                          alt={item.data.title}
+                        />
                       </div>
                     </div>
                   </div>
 
                   <figcaption class="p-8 w-1/2">
                     <header>
-                      <h2 class="text-5xl font-alex">Lorem Ipsum Hehee</h2>
+                      <p class="font-medium">
+                        {new Intl.DateTimeFormat("en-US", {
+                          dateStyle: "full",
+                        }).format(item.data.date)}
+                      </p>
+                      <h2 class="text-5xl font-alex">{item.data.title}</h2>
+                      <p class="font-medium">{item.data.location}</p>
                     </header>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Deserunt facilis accusamus totam aut ducimus repellat
-                      sapiente perspiciatis reiciendis aspernatur ab, illum
-                      veniam praesentium, ut, necessitatibus excepturi dolorum
-                      sit laudantium voluptates.
-                    </p>
+                    <p class="mt-4">{item.data.summary}</p>
+                    <button class="px-4 py-1 bg-blue-500 rounded-md mt-4 text-white">
+                      Read more
+                    </button>
                   </figcaption>
                 </figure>
               </li>
