@@ -1,6 +1,10 @@
 ---
 import Layout from "@layouts/layout.astro";
 import { Img } from "astro-imagetools/components";
+import { Icon } from "astro-icon";
+import { getCollection } from "astro:content";
+
+const foodsCollection = await getCollection("foods-and-drinks");
 ---
 
 <Layout>
@@ -87,35 +91,34 @@ import { Img } from "astro-imagetools/components";
 
   <!-- Food Section -->
   <section>
-    <header class="bg-blue-100 flex py-8 h-40">
-      <h1 class="text-5xl font-alex max-w-7xl w-full mx-auto px-4 lg:px-8">
-        Type of Food
+    <header class="bg-blue-100 flex py-8 h-40 relative">
+      <div class="absolute top-0 left-0 w-full h-full bg-blue-100"></div>
+      <h1
+        class="relative text-6xl font-alex max-w-7xl w-full mx-auto px-4 lg:px-8"
+      >
+        Savoring the Best of Dim Sum
       </h1>
     </header>
-    <ul class="max-w-7xl pb-16 mx-auto px-4 lg:px-8 flex -mt-16">
+    <ul class="max-w-7xl pb-16 mx-auto px-4 flex -mt-16 lg:px-8">
       {
-        [...Array(3)].map((item, index) => {
+        [...foodsCollection].splice(0, 3).map((item, index) => {
           return (
             <li class="p-2 w-1/3">
-              <figure class="shadow-xl border border-black rounded-xl overflow-hidden">
-                <div class="relative pb-[50%] bg-gray-500">
+              <figure class="shadow-xl border relative bg-white border-black rounded-xl overflow-hidden">
+                <div class="relative pb-[70%]">
                   <div class="absolute top-0 left-0 h-full w-full">
-                    <Img src="/images/hero-bg.jpg" alt="" />
+                    <Img src={item.data.featuredImage} alt="" />
                   </div>
+                  <div class="absolute bottom-0 bg-gradient-to-t h-1/3 opacity-75 from-black to-transparent w-full" />
                 </div>
-                <figcaption class="p-4 bg-white">
+                <figcaption class="py-1 absolute bottom-0 px-4 text-white">
                   <header>
-                    <h2 class="text-4xl font-alex">Lorem Ipsum Title</h2>
+                    <h2 class="text-xl">{item.data.title}</h2>
                   </header>
-                  <p class="py-2">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta, aspernatur voluptas? Numquam quo esse ex, suscipit
-                    tempora incidunt aspernatur optio id saepe, soluta minima
-                    officia? Qui eum a rem reprehenderit.
-                  </p>
-                  <button class="mt-2 px-4 py-1 bg-background rounded-full">
-                    Read more
-                  </button>
+                  <div class="flex items-center">
+                    <Icon class="w-6 h-6" name="ic:round-location-on" />
+                    <p class="text-sm font-medium">Manila, Toril</p>
+                  </div>
                 </figcaption>
               </figure>
             </li>
@@ -127,11 +130,11 @@ import { Img } from "astro-imagetools/components";
 
   <section>
     <header class="bg-blue-100 flex py-8 h-40">
-      <h1 class="text-5xl font-alex max-w-7xl w-full mx-auto px-4 lg:px-8">
-        Type of Food
+      <h1 class="text-6xl font-alex max-w-7xl w-full mx-auto px-4 lg:px-8">
+        Savoring the Best of Dim Sum
       </h1>
     </header>
-    <ul class="max-w-7xl pb-16 mx-auto px-4 lg:px-8 flex -mt-16">
+    <ul class="max-w-7xl pb-16 mx-auto px-4 flex -mt-16 lg:px-8">
       {
         [...Array(3)].map((item, index) => {
           return (
