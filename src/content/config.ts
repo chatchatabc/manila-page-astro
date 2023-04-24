@@ -31,6 +31,6 @@ const eventSchema = defineCollection({
 export const collections = {
   places: placeSchema,
   trips: commonSchema,
-  "foods-and-drinks": commonSchema,
+  "foods-and-drinks": placeSchema,
   events: eventSchema,
 };
