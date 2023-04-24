@@ -317,7 +317,10 @@ const tripsCollection = await getCollection("trips");
       <section
         class="flex font-bold text-white bg-gray-500 bg-opacity-50 w-full md:w-1/2"
       >
-        <div class="relative">
+        <div class="relative pb-[125%] border w-full">
+          <div id="map" class="absolute w-full h-full"></div>
+        </div>
+        <!-- <div class="relative">
           <img
             class="w-full h-full object-contain"
             src="/images/map2.png"
@@ -388,8 +391,78 @@ const tripsCollection = await getCollection("trips");
             <div class="h-4 w-4 bg-black rounded-full"></div>
             <p class="z-[1]">Muntinlupa</p>
           </div>
-        </div>
+        </div> -->
       </section>
     </section>
   </section>
+
+  <script>
+    import L from "leaflet";
+    import "leaflet/dist/leaflet.css";
+    import metroManilaCities from "@data/metro-manila.json";
+
+    // Create a Leaflet map
+    const map = L.map("map").setView([14.6091, 121.0223], 11);
+
+    // Add a TileLayer to the map
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; Philippines Administrative Boundaries JSON Maps",
+    }).addTo(map);
+
+    function getColor(name) {
+      switch (name) {
+        case "Caloocan":
+          return "#ff0000";
+        case "Manila":
+          return "#ff8000";
+        case "Mandaluyong":
+          return "#ffff00";
+        case "Marikina":
+          return "#00ff00";
+        case "Makati":
+          return "#00ffff";
+        case "Malabon":
+          return "#0000ff";
+        case "Muntinlupa":
+          return "#8000ff";
+        case "Navotas":
+          return "#ff00ff";
+        case "Parañaque":
+          return "#ff0080";
+        case "Pasay":
+          return "#ff8000";
+        case "Pasig":
+          return "#ffff00";
+        case "Quezon City":
+          return "#00ff00";
+        case "San Juan":
+          return "#00ffff";
+        case "Taguig":
+          return "#0000ff";
+        case "Valenzuela":
+          return "#8000ff";
+        case "Las Piñas":
+          return "#ff00ff";
+        case "Muntinlupa":
+          return "#ff0080";
+        case "Pateros":
+          return "#ff8000";
+        default:
+          return "#000000";
+      }
+    }
+
+    function style(feature) {
+      return {
+        fillColor: getColor(feature.properties.ADM3_EN),
+        weight: 2,
+        opacity: 1,
+        color: "black",
+        dashArray: "3",
+        fillOpacity: 0.5,
+      };
+    }
+
+    L.geoJson(metroManilaCities, { style: style }).addTo(map);
+  </script>
 </Layout>
