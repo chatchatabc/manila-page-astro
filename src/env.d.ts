@@ -4,3 +4,4 @@
 declare module "astro-imagetools/components";
 declare module "astro:content";
 declare module "astro-icon";
+declare module "leaflet";

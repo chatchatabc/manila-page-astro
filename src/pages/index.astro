@@ -409,7 +409,7 @@ const tripsCollection = await getCollection("trips");
       attribution: "&copy; Philippines Administrative Boundaries JSON Maps",
     }).addTo(map);
 
-    function getColor(name) {
+    function getColor(name: string) {
       switch (name) {
         case "Caloocan":
           return "#ff0000";
@@ -452,7 +452,7 @@ const tripsCollection = await getCollection("trips");
       }
     }
 
-    function style(feature) {
+    function style(feature: Record<string, any>) {
       return {
         fillColor: getColor(feature.properties.ADM3_EN),
         weight: 2,
