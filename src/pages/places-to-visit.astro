@@ -2,11 +2,13 @@
 import Layout from "@layouts/layout.astro";
 import { Img } from "astro-imagetools/components";
 import { getCollection } from "astro:content";
+import { Icon } from "astro-icon";
 
 const placesCollection = await getCollection("places");
 ---
 
 <Layout>
+  <!-- Hero Section -->
   <section class="bg-white relative">
     <div class="h-[80vh] overflow-hidden">
       <Img
@@ -42,50 +44,47 @@ const placesCollection = await getCollection("places");
       </h1>
     </header>
 
-    <!-- Museums Section -->
+    <!-- Featured Section -->
     <section>
       <!-- Section Title -->
       <header>
         <h2 class="text-5xl font-alex text-center">Featured Places</h2>
         <p class="text-gray-900 text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Discover the best places to visit in Metro Manila.
         </p>
       </header>
 
       <!-- Items -->
       <ul class="flex-wrap justify-center mt-4 md:flex">
         {
-          [...placesCollection]
-            .filter((place) => place.data.categories.includes("museum"))
-            .splice(0, 3)
-            .map((place) => {
-              return (
-                <li class="p-1 w-full flex-shrink-0 md:w-1/2 lg:w-1/3 xl:p-2">
-                  <figure class="bg-white rounded-xl">
-                    <div class="relative pb-[65%] overflow-hidden rounded-xl">
-                      <div class="absolute top-0 left-0 w-full h-full">
-                        <Img
-                          src={place.data.featuredImage}
-                          alt={place.data.title}
-                        />
-                      </div>
-
-                      <div class="absolute bottom-0 w-full text-white pb-1 pt-4 px-2 bg-gradient-to-t from-black to-transparent bg-opacity-50">
-                        <h2 class="text-3xl font-alex line-clamp-2">
-                          {place.data.title}
-                        </h2>
-                      </div>
+          [...placesCollection].splice(0, 3).map((place) => {
+            return (
+              <li class="p-1 w-full flex-shrink-0 md:w-1/2 lg:w-1/3 xl:p-2">
+                <figure class="bg-white rounded-xl">
+                  <div class="relative pb-[65%] overflow-hidden rounded-xl">
+                    <div class="absolute top-0 left-0 w-full h-full">
+                      <Img
+                        src={place.data.featuredImage}
+                        alt={place.data.title}
+                      />
                     </div>
-                    <figcaption class="relative p-4">
-                      <p class="line-clamp-4">{place.data.summary}</p>
-                      <button class="mt-4 bg-blue-500 text-white mx-auto block px-4 py-1 rounded-md">
-                        View more
-                      </button>
-                    </figcaption>
-                  </figure>
-                </li>
-              );
-            })
+
+                    <div class="absolute bottom-0 w-full text-white pb-1 pt-4 px-2 bg-gradient-to-t from-black to-transparent bg-opacity-50">
+                      <h2 class="text-3xl font-alex line-clamp-2">
+                        {place.data.title}
+                      </h2>
+                    </div>
+                  </div>
+                  <figcaption class="relative p-4">
+                    <p class="line-clamp-4">{place.data.summary}</p>
+                    <button class="mt-4 bg-blue-500 text-white mx-auto block px-4 py-1 rounded-md">
+                      View more
+                    </button>
+                  </figcaption>
+                </figure>
+              </li>
+            );
+          })
         }
       </ul>
     </section>
@@ -96,77 +95,97 @@ const placesCollection = await getCollection("places");
       <header>
         <h2 class="text-5xl font-alex text-center">Museums for All Ages</h2>
         <p class="text-gray-900 text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          From contemporary art to natural history, and everything in between,
+          there's a museum for every interest.
         </p>
       </header>
 
       <!-- Items -->
       <ul class="flex-wrap justify-center mt-4 md:flex">
         {
-          [...placesCollection].splice(0, 4).map((place) => {
-            return (
-              <li class="p-1 w-full flex-shrink-0 md:w-1/2 lg:w-1/4 xl:p-2">
-                <figure class="relative bg-white rounded-xl overflow-hidden">
-                  <div class="relative pb-[65%]">
-                    <div class="absolute top-0 left-0 w-full h-full">
-                      <Img
-                        src={place.data.featuredImage}
-                        alt={place.data.title}
-                      />
+          [...placesCollection]
+            .filter((place) => place.data.categories.includes("museum"))
+            .splice(0, 4)
+            .map((place) => {
+              return (
+                <li class="p-1 w-full flex-shrink-0 md:w-1/2 lg:w-1/4 xl:p-2">
+                  <figure class="relative bg-white rounded-xl overflow-hidden">
+                    <div class="relative pb-[65%]">
+                      <div class="absolute top-0 left-0 w-full h-full">
+                        <Img
+                          src={place.data.featuredImage}
+                          alt={place.data.title}
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <figcaption>
-                    <div class="absolute bottom-0 w-full text-white pb-1 pt-4 px-2 bg-gradient-to-t from-black to-transparent">
-                      <h2 class="text-3xl font-alex line-clamp-2">
-                        {place.data.title}
-                      </h2>
-                    </div>
-                  </figcaption>
-                </figure>
-              </li>
-            );
-          })
+                    <figcaption>
+                      <div class="absolute bottom-0 w-full text-white pb-1 pt-4 px-2 bg-gradient-to-t from-black to-transparent">
+                        <h2 class="text-3xl font-alex line-clamp-2">
+                          {place.data.title}
+                        </h2>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </li>
+              );
+            })
         }
       </ul>
     </section>
 
     <!-- Intramuros Section -->
-    <section class="hidden">
-      <!-- Section Title -->
-      <header>
-        <h2 class="text-5xl font-alex text-center">
-          Rich History of Intramuros
-        </h2>
-      </header>
+    <section class="bg-blue-100 rounded-xl overflow-hidden flex">
+      <!-- Left -->
+      <section class="w-1/3 p-16 flex flex-col justify-center">
+        <!-- Section Title -->
+        <header>
+          <h2 class="text-5xl font-alex">Rich History of Intramuros</h2>
+        </header>
+        <p>
+          Discover the ancient walls, the grand colonial architecture, and the
+          historic landmarks that shaped the city's past.
+        </p>
+      </section>
 
-      <!-- Items -->
-      <ul class="flex-wrap justify-center md:flex">
-        {
-          [...placesCollection].splice(0, 4).map((place) => {
-            return (
-              <li class="p-1 w-full flex-shrink-0 md:w-1/2 lg:w-1/4 xl:p-2">
-                <figure class="relative bg-white rounded-xl overflow-hidden">
-                  <div class="relative pb-[65%]">
-                    <div class="absolute top-0 left-0 w-full h-full">
-                      <Img
-                        src={place.data.featuredImage}
-                        alt={place.data.title}
-                      />
-                    </div>
-                  </div>
-                  <figcaption>
-                    <div class="absolute bottom-0 w-full text-white pb-1 pt-4 px-2 bg-gradient-to-t from-black to-transparent">
-                      <h2 class="text-3xl font-alex line-clamp-2">
-                        {place.data.title}
-                      </h2>
-                    </div>
-                  </figcaption>
-                </figure>
-              </li>
-            );
-          })
-        }
-      </ul>
+      <!-- Right -->
+      <section class="w-2/3 bg-white">
+        <ul class="flex flex-wrap">
+          {
+            [...placesCollection]
+              .filter((place) => place.data.categories.includes("intramuros"))
+              .map((place) => {
+                return (
+                  <li class="w-1/2 p-2">
+                    <figure class="relative pb-[60%] rounded-xl overflow-hidden group">
+                      <div class="absolute w-full h-full duration-500 group-hover:scale-110">
+                        <Img
+                          src={place.data.featuredImage}
+                          alt={place.data.title}
+                        />
+                        <div class="bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0 h-1/2 w-full" />
+                      </div>
+
+                      <figcaption class="absolute bottom-0 w-full text-white p-1">
+                        <header>
+                          <h2 class="text-xl text-center">
+                            {place.data.title}
+                          </h2>
+                        </header>
+                        <p class="text-xs text-center font-medium flex justify-center">
+                          <Icon
+                            name="ic:baseline-location-on"
+                            class="w-4 h-4"
+                          />
+                          <span>{place.data.location}</span>
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                );
+              })
+          }
+        </ul>
+      </section>
     </section>
   </section>
 </Layout>
