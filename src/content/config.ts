@@ -15,7 +15,7 @@ const tripSchema = defineCollection({
     title: z.string(),
     summary: z.string(),
     featuredImage: z.string(),
-    images: z.array(z.object({ src: z.string(), name: z.string() })),
+    images: z.array(z.string()),
     location: z.string(),
     categories: z.array(z.string()),
   }),
