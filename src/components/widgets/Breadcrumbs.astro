@@ -1,0 +1,46 @@
+---
+import { utilSlugToTitle } from "src/utils/commonUtils";
+
+const { pathname } = Astro.url;
+
+const splittedPathname = pathname.split("/");
+let currentPath = "";
+const breadcrumbs = splittedPathname.map((path, index) => {
+  if (path.length === 0) {
+    currentPath += "/";
+    return {
+      name: "Home",
+      path: currentPath,
+    };
+  } else if (index === splittedPathname.length - 1) {
+    return {
+      name: utilSlugToTitle(path),
+    };
+  } else {
+    currentPath += `/${path}`;
+    return {
+      name: utilSlugToTitle(path),
+      path: currentPath,
+    };
+  }
+});
+---
+
+<ul class="text-xs flex">
+  {
+    breadcrumbs.map((crumb, index) => {
+      return (
+        <li class="flex space-x-2 px-1">
+          {index ? <span>&gt;</span> : null}
+          {crumb.path ? (
+            <a class="underline hover:text-blue-700" href={crumb.path}>
+              {crumb.name}
+            </a>
+          ) : (
+            <a class="font-bold">{crumb.name}</a>
+          )}
+        </li>
+      );
+    })
+  }
+</ul>
