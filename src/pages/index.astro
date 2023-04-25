@@ -214,63 +214,34 @@ const tripsCollection = await getCollection("trips");
     <!-- 1st half -->
     <section class="flex flex-wrap mt-28 px-4 lg:px-8">
       {
-        [...tripsCollection].splice(0, 3).map((trip, index) => {
+        [...tripsCollection].splice(0, 6).map((trip, index) => {
           const { title, summary, featuredImage } = trip.data;
           return (
             <article
-              class={`${
-                index ? "w-full md:w-1/2 lg:w-1/4" : "w-full lg:w-1/2"
+              class={`w-full ${
+                index % 6 === 0 || index % 6 === 5
+                  ? "lg:w-1/2"
+                  : "md:w-1/2 lg:w-1/4"
               }`}
             >
               <figure class="px-2">
                 <div
                   class={`h-64 ${
-                    index ? "overflow-hidden md:rounded-t-3xl" : ""
+                    index % 6 === 0 || index % 6 === 5
+                      ? ""
+                      : "overflow-hidden md:rounded-t-3xl"
                   }`}
                 >
                   <Img src={featuredImage} alt={title} />
                 </div>
                 <figcaption class="px-2 w-3/4 mx-auto bg-white relative bottom-10 rounded-t-xl shadow">
                   <header class="border-b border-dashed border-black">
-                    <h2 class="text-center font-medium text-xl">Test</h2>
-                  </header>
-                  <p title={summary} class="p-1 line-clamp-4">
-                    {summary}
-                  </p>
-                </figcaption>
-              </figure>
-            </article>
-          );
-        })
-      }
-    </section>
-
-    <!-- 2nd Half -->
-    <section
-      class="flex flex-row-reverse flex-wrap px-4 mt-4 lg:px-8 lg:flex-row"
-    >
-      {
-        [...tripsCollection].splice(3, 3).map((trip, index) => {
-          const { title, summary, featuredImage } = trip.data;
-          return (
-            <article
-              class={`${
-                index
-                  ? "w-full md:w-1/2 lg:w-1/4"
-                  : "w-full lg:w-1/2 lg:order-3"
-              }`}
-            >
-              <figure class="px-2">
-                <div
-                  class={`h-64 ${
-                    index < 2 ? "overflow-hidden md:rounded-t-3xl" : ""
-                  }`}
-                >
-                  <Img src={featuredImage} alt={title} />
-                </div>
-                <figcaption class="px-2 w-3/4 mx-auto bg-white relative bottom-10 rounded-t-xl shadow">
-                  <header class="border-b border-dashed border-black">
-                    <h2 class="text-center font-medium text-xl">Test</h2>
+                    <h2
+                      title={title}
+                      class="text-center font-medium text-xl line-clamp-1"
+                    >
+                      {title}
+                    </h2>
                   </header>
                   <p title={summary} class="p-1 line-clamp-4">
                     {summary}
