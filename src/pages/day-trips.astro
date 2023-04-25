@@ -4,6 +4,8 @@ import { Img } from "astro-imagetools/components";
 import { getCollection } from "astro:content";
 
 const tripsCollection = await getCollection("trips");
+
+const { pathname } = Astro.url;
 ---
 
 <Layout>
@@ -76,10 +78,12 @@ const tripsCollection = await getCollection("trips");
                   </h1>
                 </header>
                 <p>{trip.data.summary}</p>
-
-                <button class="px-8 mt-8 w-fit py-2 bg-blue-400">
+                <a
+                  href={`${pathname}/${trip.slug}`}
+                  class="px-8 mt-8 w-fit py-2 bg-blue-400"
+                >
                   View More
-                </button>
+                </a>
               </figcaption>
             </figure>
           </section>
@@ -125,9 +129,12 @@ const tripsCollection = await getCollection("trips");
                 </div>
               </div>
 
-              <button class="px-8 mx-auto w-fit py-2 bg-blue-400">
+              <a
+                href={`${pathname}/${trip.slug}`}
+                class="px-8 mx-auto w-fit py-2 bg-blue-400"
+              >
                 View More
-              </button>
+              </a>
             </figcaption>
           </figure>
         </section>
