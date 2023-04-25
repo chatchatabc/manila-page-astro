@@ -281,8 +281,9 @@ const tripsCollection = await getCollection("trips");
           </p>
           <button
             class="mx-auto block w-fit py-2 px-4 mt-2 bg-[#A426B8] text-white rounded-md"
-            >Explore Manila</button
           >
+            Explore Manila
+          </button>
         </article>
       </section>
       <section
@@ -291,78 +292,6 @@ const tripsCollection = await getCollection("trips");
         <div class="relative pb-[125%] border w-full">
           <div id="map" class="absolute w-full h-full"></div>
         </div>
-        <!-- <div class="relative">
-          <img
-            class="w-full h-full object-contain"
-            src="/images/map2.png"
-            alt="map"
-          />
-
-          <div class="absolute top-[6%] left-[55%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Caloocan</p>
-          </div>
-
-          <div class="absolute top-[25%] left-[55%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Quezon City</p>
-          </div>
-
-          <div class="absolute top-[30%] left-[75%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Marikina</p>
-          </div>
-
-          <div class="absolute top-[46%] left-[53%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Mandaluyong</p>
-          </div>
-
-          <div class="absolute top-[18%] left-[35%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Valenzuela</p>
-          </div>
-
-          <div class="absolute top-[25%] left-[28%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Malabon</p>
-          </div>
-
-          <div class="absolute top-[40%] left-[35%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Manila</p>
-          </div>
-
-          <div class="absolute top-[51%] left-[46%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Makati</p>
-          </div>
-
-          <div class="absolute top-[44%] left-[70%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Pasig</p>
-          </div>
-
-          <div class="absolute top-[57%] left-[55%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Taguig</p>
-          </div>
-
-          <div class="absolute top-[65%] left-[45%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Paranaque</p>
-          </div>
-
-          <div class="absolute top-[75%] left-[37%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Las Pinas</p>
-          </div>
-
-          <div class="absolute top-[85%] left-[50%] group">
-            <div class="h-4 w-4 bg-black rounded-full"></div>
-            <p class="z-[1]">Muntinlupa</p>
-          </div>
-        </div> -->
       </section>
     </section>
   </section>
@@ -373,7 +302,7 @@ const tripsCollection = await getCollection("trips");
     import metroManilaCities from "@data/metro-manila.json";
 
     // Create a Leaflet map
-    const map = L.map("map").setView([14.6091, 121.0223], 11);
+    const map = L.map("map").setView([14.5801, 121.0223], 11);
 
     // Add a TileLayer to the map
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
