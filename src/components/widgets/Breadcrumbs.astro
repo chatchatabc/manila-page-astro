@@ -1,16 +1,16 @@
 ---
-import { utilSlugToTitle } from "src/utils/commonUtils";
+import { utilRemoveTrailSlash, utilSlugToTitle } from "src/utils/commonUtils";
 
 const { pathname } = Astro.url;
+const fixedPathname = utilRemoveTrailSlash(pathname);
 
-const splittedPathname = pathname.split("/");
+const splittedPathname = fixedPathname.split("/");
 let currentPath = "";
 const breadcrumbs = splittedPathname.map((path, index) => {
   if (path.length === 0) {
-    currentPath += "/";
     return {
       name: "Home",
-      path: currentPath,
+      path: "/",
     };
   } else if (index === splittedPathname.length - 1) {
     return {

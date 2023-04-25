@@ -2,10 +2,12 @@
 import Layout from "@layouts/layout.astro";
 import { Img } from "astro-imagetools/components";
 import { getCollection } from "astro:content";
+import { utilRemoveTrailSlash } from "src/utils/commonUtils";
 
 const tripsCollection = await getCollection("trips");
 
 const { pathname } = Astro.url;
+const fixedPathname = utilRemoveTrailSlash(pathname);
 ---
 
 <Layout>
@@ -79,7 +81,7 @@ const { pathname } = Astro.url;
                 </header>
                 <p>{trip.data.summary}</p>
                 <a
-                  href={`${pathname}/${trip.slug}`}
+                  href={`${fixedPathname}/${trip.slug}`}
                   class="px-8 mt-8 w-fit py-2 bg-blue-400"
                 >
                   View More
@@ -130,7 +132,7 @@ const { pathname } = Astro.url;
               </div>
 
               <a
-                href={`${pathname}/${trip.slug}`}
+                href={`${fixedPathname}/${trip.slug}`}
                 class="px-8 mx-auto w-fit py-2 bg-blue-400"
               >
                 View More

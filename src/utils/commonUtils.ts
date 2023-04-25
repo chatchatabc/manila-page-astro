@@ -5,3 +5,14 @@ export function utilSlugToTitle(slug: string): string {
   });
   return capitalized.join(" ");
 }
+
+export function utilRemoveTrailSlash(slug: string): string {
+  // Remove trailing slash at the end of the slug
+  if (slug === "/") {
+    return slug;
+  }
+  if (slug.charAt(slug.length - 1) === "/") {
+    return slug.slice(0, slug.length - 1);
+  }
+  return slug;
+}
