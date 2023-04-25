@@ -53,7 +53,7 @@ const { Content } = await trip.render();
       </section>
       <ul class="w-1/3">
         {
-          [...data.images].splice(0, 5).map((imageUrl) => {
+          [...trip.data.images].splice(0, 5).map((imageUrl) => {
             console.log(imageUrl);
             return (
               <li class="p-2">
