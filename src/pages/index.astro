@@ -380,6 +380,40 @@ const tripsCollection = await getCollection("trips");
       attribution: "&copy; Philippines Administrative Boundaries JSON Maps",
     }).addTo(map);
 
+    let geojson = L.geoJson(metroManilaCities, {
+      style: style,
+      onEachFeature: onEachFeature,
+    }).addTo(map);
+
+    function highlightFeature(e: any) {
+      var layer = e.target;
+
+      layer.setStyle({
+        weight: 5,
+        color: "#666",
+        dashArray: "",
+        fillOpacity: 0.7,
+      });
+
+      layer.bringToFront();
+    }
+
+    function resetHighlight(e: any) {
+      geojson.resetStyle(e.target);
+    }
+
+    function zoomToFeature(e: any) {
+      map.fitBounds(e.target.getBounds());
+    }
+
+    function onEachFeature(feature: any, layer: any) {
+      layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature,
+      });
+    }
+
     function getColor(name: string) {
       switch (name) {
         case "Caloocan":
@@ -433,7 +467,5 @@ const tripsCollection = await getCollection("trips");
         fillOpacity: 0.5,
       };
     }
-
-    L.geoJson(metroManilaCities, { style: style }).addTo(map);
   </script>
 </Layout>
