@@ -5,6 +5,7 @@ const placeSchema = defineCollection({
     title: z.string(),
     summary: z.string(),
     featuredImage: z.string(),
+    images: z.array(z.string()),
     location: z.string(),
     categories: z.array(z.string()),
   }),
@@ -18,14 +19,6 @@ const tripSchema = defineCollection({
     images: z.array(z.string()),
     location: z.string(),
     categories: z.array(z.string()),
-  }),
-});
-
-const commonSchema = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    summary: z.string(),
-    featuredImage: z.string(),
   }),
 });
 
