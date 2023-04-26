@@ -143,9 +143,11 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
     </section>
 
     <!-- Intramuros Section -->
-    <section class="bg-blue-100 rounded-xl overflow-hidden flex">
+    <section class="bg-blue-100 rounded-xl overflow-hidden flex flex-wrap">
       <!-- Left -->
-      <section class="w-1/3 p-16 flex flex-col justify-center">
+      <section
+        class="flex flex-col justify-center w-full p-8 md:p-12 lg:p-16 lg:w-1/3"
+      >
         <!-- Section Title -->
         <header>
           <h2 class="text-5xl font-alex">Rich History of Intramuros</h2>
@@ -157,14 +159,14 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
       </section>
 
       <!-- Right -->
-      <section class="w-2/3 bg-white">
+      <section class="bg-white w-full lg:w-2/3">
         <ul class="flex flex-wrap">
           {
             [...placesCollection]
               .filter((place) => place.data.categories.includes("intramuros"))
               .map((place) => {
                 return (
-                  <li class="w-1/2 p-2">
+                  <li class="p-2 w-full md:w-1/2">
                     <a href={`${fixedPathname}/${place.slug}`}>
                       <figure class="relative pb-[60%] rounded-xl overflow-hidden group">
                         <div class="absolute w-full h-full duration-500 group-hover:scale-110">
