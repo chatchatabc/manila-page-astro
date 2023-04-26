@@ -27,8 +27,10 @@ const eventSchema = defineCollection({
     title: z.string(),
     summary: z.string(),
     featuredImage: z.string(),
+    images: z.array(z.string()),
     date: z.date(),
     location: z.string(),
+    categories: z.array(z.string()),
   }),
 });
 
