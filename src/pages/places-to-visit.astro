@@ -3,8 +3,12 @@ import Layout from "@layouts/layout.astro";
 import { Img } from "astro-imagetools/components";
 import { getCollection } from "astro:content";
 import { Icon } from "astro-icon";
+import { utilRemoveTrailSlash, utilSlugToTitle } from "src/utils/commonUtils";
 
 const placesCollection = await getCollection("places");
+
+const { pathname } = Astro.url;
+const fixedPathname = utilRemoveTrailSlash(pathname);
 ---
 
 <Layout>
@@ -77,9 +81,12 @@ const placesCollection = await getCollection("places");
                   </div>
                   <figcaption class="relative p-4">
                     <p class="line-clamp-4">{place.data.summary}</p>
-                    <button class="mt-4 bg-blue-500 text-white mx-auto block px-4 py-1 rounded-md">
+                    <a
+                      href={`${fixedPathname}/${place.slug}`}
+                      class="mt-4 bg-blue-500 text-white mx-auto block w-fit px-4 py-1 rounded-md"
+                    >
                       View more
-                    </button>
+                    </a>
                   </figcaption>
                 </figure>
               </li>
@@ -109,23 +116,25 @@ const placesCollection = await getCollection("places");
             .map((place) => {
               return (
                 <li class="p-1 w-full flex-shrink-0 md:w-1/2 lg:w-1/4 xl:p-2">
-                  <figure class="relative bg-white rounded-xl overflow-hidden group">
-                    <div class="relative pb-[65%]">
-                      <div class="absolute top-0 left-0 w-full h-full duration-500 group-hover:scale-110">
-                        <Img
-                          src={place.data.featuredImage}
-                          alt={place.data.title}
-                        />
+                  <a href={`${fixedPathname}/${place.slug}`}>
+                    <figure class="relative bg-white rounded-xl overflow-hidden group">
+                      <div class="relative pb-[65%]">
+                        <div class="absolute top-0 left-0 w-full h-full duration-500 group-hover:scale-110">
+                          <Img
+                            src={place.data.featuredImage}
+                            alt={place.data.title}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <figcaption>
-                      <div class="absolute bottom-0 w-full text-white pb-1 pt-4 px-2 bg-gradient-to-t from-black to-transparent">
-                        <h2 class="text-3xl font-alex line-clamp-2">
-                          {place.data.title}
-                        </h2>
-                      </div>
-                    </figcaption>
-                  </figure>
+                      <figcaption>
+                        <div class="absolute bottom-0 w-full text-white pb-1 pt-4 px-2 bg-gradient-to-t from-black to-transparent">
+                          <h2 class="text-3xl font-alex line-clamp-2">
+                            {place.data.title}
+                          </h2>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
                 </li>
               );
             })
@@ -156,30 +165,32 @@ const placesCollection = await getCollection("places");
               .map((place) => {
                 return (
                   <li class="w-1/2 p-2">
-                    <figure class="relative pb-[60%] rounded-xl overflow-hidden group">
-                      <div class="absolute w-full h-full duration-500 group-hover:scale-110">
-                        <Img
-                          src={place.data.featuredImage}
-                          alt={place.data.title}
-                        />
-                        <div class="bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0 h-1/2 w-full" />
-                      </div>
-
-                      <figcaption class="absolute bottom-0 w-full text-white p-1">
-                        <header>
-                          <h2 class="text-xl text-center">
-                            {place.data.title}
-                          </h2>
-                        </header>
-                        <p class="text-xs text-center font-medium flex justify-center">
-                          <Icon
-                            name="ic:baseline-location-on"
-                            class="w-4 h-4"
+                    <a href={`${fixedPathname}/${place.slug}`}>
+                      <figure class="relative pb-[60%] rounded-xl overflow-hidden group">
+                        <div class="absolute w-full h-full duration-500 group-hover:scale-110">
+                          <Img
+                            src={place.data.featuredImage}
+                            alt={place.data.title}
                           />
-                          <span>{place.data.location}</span>
-                        </p>
-                      </figcaption>
-                    </figure>
+                          <div class="bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0 h-1/2 w-full" />
+                        </div>
+
+                        <figcaption class="absolute bottom-0 w-full text-white p-1">
+                          <header>
+                            <h2 class="text-xl text-center">
+                              {place.data.title}
+                            </h2>
+                          </header>
+                          <p class="text-xs text-center font-medium flex justify-center">
+                            <Icon
+                              name="ic:baseline-location-on"
+                              class="w-4 h-4"
+                            />
+                            <span>{place.data.location}</span>
+                          </p>
+                        </figcaption>
+                      </figure>
+                    </a>
                   </li>
                 );
               })
@@ -227,9 +238,12 @@ const placesCollection = await getCollection("places");
                     </div>
                     <figcaption class="relative p-4">
                       <p class="line-clamp-4">{place.data.summary}</p>
-                      <button class="mt-4 bg-blue-500 text-white mx-auto block px-4 py-1 rounded-md">
+                      <a
+                        href={`${fixedPathname}/${place.slug}`}
+                        class="mt-4 bg-blue-500 text-white mx-auto w-fit block px-4 py-1 rounded-md"
+                      >
                         View more
-                      </button>
+                      </a>
                     </figcaption>
                   </figure>
                 </li>
