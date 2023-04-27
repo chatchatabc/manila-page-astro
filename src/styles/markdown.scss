@@ -1,49 +1,43 @@
 .markdown {
   /* Typography */
   body {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background-color: rgb(219, 234, 254);
+    background-color: #fff;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Inter", sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
     font-weight: bold;
     line-height: 1.2;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    text-align: center;
   }
 
   h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
     font-size: 2.5rem;
   }
 
-  h3 {
+  h2 {
     font-size: 2rem;
   }
 
-  h4 {
+  h3 {
     font-size: 1.5rem;
   }
 
-  h5 {
+  h4 {
     font-size: 1.25rem;
   }
 
-  h6 {
+  h5 {
     font-size: 1rem;
+  }
+
+  h6 {
+    font-size: 0.875rem;
   }
 
   p {
@@ -66,8 +60,7 @@
   }
 
   /* Lists */
-  ul,
-  ol {
+  ul, ol {
     margin-bottom: 1.5rem;
     margin-left: 2rem;
   }
@@ -78,7 +71,7 @@
 
   /* Code blocks */
   pre {
-    background-color: #cbd5e0;
+    background-color: #f7fafc;
     color: #333;
     padding: 1rem;
     overflow: auto;
@@ -88,13 +81,13 @@
   }
 
   code {
-    font-family: "Fira Code", monospace;
+    font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
   }
 
   /* Blockquotes */
   blockquote {
-    background-color: #cbd5e0;
+    background-color: #f7fafc;
     border-left: 0.25rem solid #2c5282;
     color: #333;
     margin: 0;
@@ -127,6 +120,7 @@
   img {
     max-width: 100%;
     height: auto;
+    max-height: 350px;
     display: block;
     margin: 1.5rem auto;
     border-radius: 0.5rem;
