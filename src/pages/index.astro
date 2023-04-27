@@ -315,7 +315,7 @@ const tripsCollection = await getCollection("trips");
     }).addTo(map);
 
     function highlightFeature(e: any) {
-      var layer = e.target;
+      let layer = e.target;
 
       layer.setStyle({
         weight: 5,
