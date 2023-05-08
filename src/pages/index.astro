@@ -5,6 +5,9 @@ import { getCollection } from "astro:content";
 
 const placesCollection = await getCollection("places");
 const tripsCollection = await getCollection("trips");
+const eventsCollection = await getCollection("events");
+const event1 = eventsCollection[2];
+const event2 = eventsCollection[4];
 ---
 
 <Layout>
@@ -67,9 +70,12 @@ const tripsCollection = await getCollection("trips");
                       <h3 class="text-center text-xl font-medium">{title}</h3>
                     </header>
                     <p class="line-clamp-4 text-gray-900">{summary}</p>
-                    <button class="px-4 py-1 bg-blue-500 text-white rounded-md mx-auto block w-fit mt-4">
+                    <a
+                      href={`/places-to-visit/${place.slug}`}
+                      class="px-4 py-1 bg-blue-500 text-white rounded-md mx-auto block w-fit mt-4"
+                    >
                       Read More
-                    </button>
+                    </a>
                   </figcaption>
                 </figure>
               </li>
@@ -102,40 +108,43 @@ const tripsCollection = await getCollection("trips");
         <!-- Left -->
         <div class="flex flex-col md:w-1/2">
           <div class="p-2">
-            <img
-              class="w-full object-cover aspect-square rounded-lg"
-              src="/images/places/place1.png"
-              alt="test"
-            />
+            <div class="pb-[100%] relative overflow-hidden rounded-lg">
+              <div class="absolute top-0 w-full h-full">
+                <Img src={event1.data.images[0]} alt="test" />
+              </div>
+            </div>
           </div>
           <div class="p-8 border-x border-dashed border-black md:mt-48">
             <header class="space-y-2">
-              <h2 class="text-3xl">Feast of the Black Nazarene</h2>
-              <h3 class="text-2xl text-end font-alex">Januaruy 9</h3>
+              <h2 class="text-3xl">{event1.data.title}</h2>
+              <p class="text-2xl text-end font-alex">
+                {
+                  new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(
+                    event1.data.date
+                  )
+                }
+              </p>
             </header>
-            <p class="px-4">
-              This religious festival honors the statue of the Black Nazarene,
-              which is believed to have miraculous powers. Devotees from all
-              over the Philippines flock to Quiapo Church to touch or kiss the
-              statue
+            <p class="line-clamp-6">
+              {event1.data.summary}
             </p>
           </div>
         </div>
         <!-- Right -->
         <div class="w-1/2 flex-col justify-around mt-48 hidden md:flex">
           <div class="p-2">
-            <img
-              class="w-full object-cover aspect-square rounded-lg"
-              src="/images/places/place1.png"
-              alt="test"
-            />
+            <div class="pb-[100%] relative overflow-hidden rounded-lg">
+              <div class="absolute top-0 w-full h-full">
+                <Img src={event1.data.images[1]} alt="test" />
+              </div>
+            </div>
           </div>
           <div class="mt-72 p-2">
-            <img
-              class="w-full object-cover aspect-square rounded-lg"
-              src="/images/places/place1.png"
-              alt="test"
-            />
+            <div class="pb-[100%] relative overflow-hidden rounded-lg">
+              <div class="absolute top-0 w-full h-full">
+                <Img src={event1.data.images[2]} alt="test" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -145,30 +154,33 @@ const tripsCollection = await getCollection("trips");
         <!-- Left -->
         <div class="flex flex-col md:w-1/2">
           <div class="p-2 hidden md:block">
-            <img
-              class="w-full object-cover aspect-square rounded-lg"
-              src="/images/places/place1.png"
-              alt="test"
-            />
+            <div class="pb-[100%] relative overflow-hidden rounded-lg">
+              <div class="absolute top-0 w-full h-full">
+                <Img src={event2.data.images[0]} alt="test" />
+              </div>
+            </div>
           </div>
           <figure class="md:mt-48">
             <div class="p-2">
-              <img
-                class="w-full object-cover aspect-square rounded-lg"
-                src="/images/places/place1.png"
-                alt="test"
-              />
+              <div class="pb-[100%] relative overflow-hidden rounded-lg">
+                <div class="absolute top-0 w-full h-full">
+                  <Img src={event2.data.images[1]} alt="test" />
+                </div>
+              </div>
             </div>
             <figcaption class="p-8 border-x border-dashed border-black">
               <header class="space-y-2">
-                <h2 class="text-3xl">Feast of the Black Nazarene</h2>
-                <h3 class="text-2xl text-end font-alex">Januaruy 9</h3>
+                <h2 class="text-3xl">{event2.data.title}</h2>
+                <p class="text-2xl text-end font-alex">
+                  {
+                    new Intl.DateTimeFormat("en", {
+                      dateStyle: "medium",
+                    }).format(event2.data.date)
+                  }
+                </p>
               </header>
-              <p class="px-4">
-                This religious festival honors the statue of the Black Nazarene,
-                which is believed to have miraculous powers. Devotees from all
-                over the Philippines flock to Quiapo Church to touch or kiss the
-                statue
+              <p class="line-clamp-6">
+                {event2.data.summary}
               </p>
             </figcaption>
           </figure>
@@ -177,18 +189,18 @@ const tripsCollection = await getCollection("trips");
         <!-- Right -->
         <div class="w-1/2 flex-col justify-around mt-48 hidden md:flex">
           <div class="p-2">
-            <img
-              class="w-full object-cover aspect-square rounded-lg"
-              src="/images/places/place1.png"
-              alt="test"
-            />
+            <div class="pb-[100%] relative overflow-hidden rounded-lg">
+              <div class="absolute top-0 w-full h-full">
+                <Img src={event2.data.images[2]} alt="test" />
+              </div>
+            </div>
           </div>
           <div class="mt-72 p-2">
-            <img
-              class="w-full object-cover aspect-square rounded-lg"
-              src="/images/places/place1.png"
-              alt="test"
-            />
+            <div class="pb-[100%] relative overflow-hidden rounded-lg">
+              <div class="absolute top-0 w-full h-full">
+                <Img src={event2.data.images[3]} alt="test" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
