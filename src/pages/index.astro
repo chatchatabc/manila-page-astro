@@ -364,6 +364,10 @@ const event2 = eventsCollection[4];
         click: (e: any) => {
           neighborhoodSummary.innerHTML =
             metroManila[feature.properties.ADM3_EN];
+          neighborhoodSummary.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
           zoomToFeature(e);
         },
       });
