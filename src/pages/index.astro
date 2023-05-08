@@ -279,7 +279,10 @@ const event2 = eventsCollection[4];
 
       <section class="w-full md:w-1/2">
         <article class="p-8">
-          <p class="bg-[#2B5F8F] p-2 text-white rounded-xl">
+          <p
+            data-neighborhood-summary
+            class="bg-[#2B5F8F] p-2 text-white rounded-xl"
+          >
             Manila is the capital city of the Philippines and is known for its
             rich history, diverse culture, and vibrant atmosphere. It is a
             bustling metropolis that serves as the economic, political, and
@@ -312,6 +315,13 @@ const event2 = eventsCollection[4];
     import L from "leaflet";
     import "leaflet/dist/leaflet.css";
     import metroManilaCities from "@data/metro-manila.json";
+    import metroManilaJson from "@data/metro-manila-info.json";
+
+    const metroManila = metroManilaJson as Record<string, any>;
+
+    const neighborhoodSummary = document.querySelector<HTMLElement>(
+      "[data-neighborhood-summary]"
+    )!;
 
     // Create a Leaflet map
     const map = L.map("map").setView([14.5801, 121.0223], 11);
@@ -351,7 +361,11 @@ const event2 = eventsCollection[4];
       layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        click: zoomToFeature,
+        click: (e: any) => {
+          neighborhoodSummary.innerHTML =
+            metroManila[feature.properties.ADM3_EN];
+          zoomToFeature(e);
+        },
       });
     }
 
