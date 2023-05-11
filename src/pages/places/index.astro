@@ -3,7 +3,7 @@ import Layout from "@layouts/layout.astro";
 import { Img } from "astro-imagetools/components";
 import { getCollection } from "astro:content";
 import { Icon } from "astro-icon";
-import { utilRemoveTrailSlash, utilSlugToTitle } from "src/utils/commonUtils";
+import { utilRemoveTrailSlash } from "src/utils/commonUtils";
 
 const placesCollection = await getCollection("places");
 
