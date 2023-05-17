@@ -1,4 +1,6 @@
 ---
+import { Picture } from "astro-imagetools/components";
+
 const links = [
   {
     href: "/places",
@@ -30,17 +32,20 @@ const links = [
 <header class="z-[1] bg-primary">
   <div class="container mx-auto px-4 lg:px-8">
     <!-- Desktop navbar -->
-    <nav class="hidden justify-between items-center lg:flex">
-      <a href="/">
-        <img class="w-40" src="/images/logo3.png" alt="logo" />
-      </a>
+    <nav class="hidden justify-center items-center flex-wrap lg:flex">
+      <div class="w-full">
+        <a class="w-96 block mx-auto pt-4" href="/">
+          <Picture src="/images/logo3.png" alt="logo" />
+        </a>
+      </div>
+
       <ul class="flex justify-center">
         {
           links.map((link) => {
             return (
               <li>
                 <a
-                  class="block py-2 px-4 hover:bg-[#5C97BF] hover:text-white"
+                  class="block py-2 px-4 uppercase font-bold hover:bg-[#5C97BF] hover:text-white"
                   href={link.href}
                 >
                   {link.name}
