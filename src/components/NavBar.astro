@@ -2,6 +2,7 @@
 import { Picture } from "astro-imagetools/components";
 
 const links = [
+  { href: "/", name: "Home" },
   {
     href: "/places",
     name: "Places to Visit",
@@ -29,8 +30,16 @@ const links = [
 ];
 ---
 
-<header class="z-[1] bg-primary">
-  <div class="container mx-auto px-4 lg:px-8">
+<header class="z-[1] absolute top-0 w-screen group">
+  <!-- <div
+    class="bg-gradient-to-b from-white to-transparent absolute h-full w-full opacity-50 pointer-events-none"
+  >
+  </div> -->
+  <div
+    class="bg-primary absolute h-full w-full origin-top opacity-50 backdrop-blur-3xl duration-500"
+  >
+  </div>
+  <div class="container mx-auto px-4 relative z-[1] lg:px-8">
     <!-- Desktop navbar -->
     <nav class="hidden justify-center items-center flex-wrap lg:flex">
       <div class="w-full">
