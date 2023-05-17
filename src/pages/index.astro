@@ -14,7 +14,12 @@ const event2 = eventsCollection[4];
   <!-- Hero Section -->
   <section class="h-screen max-h-[600px] relative">
     <!-- Background Image -->
-    <Img objectPosition="50% 75%" src="/images/hero-bg.jpg" alt="" />
+    <Img
+      breakpoints={[320, 768, 1024]}
+      objectPosition="50% 75%"
+      src="/images/hero-bg.jpg"
+      alt=""
+    />
 
     <!-- Wave -->
     <div class="w-full absolute bottom-0 translate-y-1/2 z-[1]">
@@ -44,7 +49,11 @@ const event2 = eventsCollection[4];
               <li class="snap-center w-full flex-shrink-0 p-1 md:w-1/2 lg:w-1/4">
                 <figure>
                   <div class="h-96">
-                    <Img src={`${featuredImage}`} alt={title} />
+                    <Img
+                      breakpoints={[320, 768]}
+                      src={`${featuredImage}`}
+                      alt={title}
+                    />
                   </div>
                   <figcaption class="bg-[#ABC0D1] px-4 py-16">
                     <section class="flex justify-center space-x-4">
@@ -110,7 +119,11 @@ const event2 = eventsCollection[4];
           <div class="p-2">
             <div class="pb-[100%] relative overflow-hidden rounded-lg">
               <div class="absolute top-0 w-full h-full">
-                <Img src={event1.data.images[0]} alt="test" />
+                <Img
+                  breakpoints={[320, 768]}
+                  src={event1.data.images[0]}
+                  alt="test"
+                />
               </div>
             </div>
           </div>
@@ -135,14 +148,22 @@ const event2 = eventsCollection[4];
           <div class="p-2">
             <div class="pb-[100%] relative overflow-hidden rounded-lg">
               <div class="absolute top-0 w-full h-full">
-                <Img src={event1.data.images[1]} alt="test" />
+                <Img
+                  breakpoints={[320, 768]}
+                  src={event1.data.images[1]}
+                  alt="test"
+                />
               </div>
             </div>
           </div>
           <div class="mt-72 p-2">
             <div class="pb-[100%] relative overflow-hidden rounded-lg">
               <div class="absolute top-0 w-full h-full">
-                <Img src={event1.data.images[2]} alt="test" />
+                <Img
+                  breakpoints={[320, 768]}
+                  src={event1.data.images[2]}
+                  alt="test"
+                />
               </div>
             </div>
           </div>
@@ -156,7 +177,11 @@ const event2 = eventsCollection[4];
           <div class="p-2 hidden md:block">
             <div class="pb-[100%] relative overflow-hidden rounded-lg">
               <div class="absolute top-0 w-full h-full">
-                <Img src={event2.data.images[0]} alt="test" />
+                <Img
+                  breakpoints={[320, 768]}
+                  src={event2.data.images[0]}
+                  alt="test"
+                />
               </div>
             </div>
           </div>
@@ -164,7 +189,11 @@ const event2 = eventsCollection[4];
             <div class="p-2">
               <div class="pb-[100%] relative overflow-hidden rounded-lg">
                 <div class="absolute top-0 w-full h-full">
-                  <Img src={event2.data.images[1]} alt="test" />
+                  <Img
+                    breakpoints={[320, 768]}
+                    src={event2.data.images[1]}
+                    alt="test"
+                  />
                 </div>
               </div>
             </div>
@@ -191,14 +220,22 @@ const event2 = eventsCollection[4];
           <div class="p-2">
             <div class="pb-[100%] relative overflow-hidden rounded-lg">
               <div class="absolute top-0 w-full h-full">
-                <Img src={event2.data.images[2]} alt="test" />
+                <Img
+                  breakpoints={[320, 768]}
+                  src={event2.data.images[2]}
+                  alt="test"
+                />
               </div>
             </div>
           </div>
           <div class="mt-72 p-2">
             <div class="pb-[100%] relative overflow-hidden rounded-lg">
               <div class="absolute top-0 w-full h-full">
-                <Img src={event2.data.images[3]} alt="test" />
+                <Img
+                  breakpoints={[320, 768]}
+                  src={event2.data.images[3]}
+                  alt="test"
+                />
               </div>
             </div>
           </div>
@@ -214,7 +251,7 @@ const event2 = eventsCollection[4];
     <header class="relative lg:px-8">
       <!-- background -->
       <div class="h-56 overflow-hidden lg:rounded-3xl">
-        <Img src="/images/day-trips-bg.png" alt="" />
+        <Img breakpoints={[320, 768]} src="/images/day-trips-bg.png" alt="" />
       </div>
       <h1
         class="shadow-xl w-2/3 mx-auto text-center bottom-0 translate-y-1/2 text-[#264F6E] bg-[#BFD7EA] rounded-3xl absolute py-8 left-0 right-0 font-alex text-5xl lg:text-7xl"
@@ -244,7 +281,11 @@ const event2 = eventsCollection[4];
                       : "overflow-hidden md:rounded-t-3xl"
                   }`}
                 >
-                  <Img src={featuredImage} alt={title} />
+                  <Img
+                    breakpoints={[320, 768]}
+                    src={featuredImage}
+                    alt={title}
+                  />
                 </div>
                 <figcaption class="px-2 w-3/4 mx-auto bg-white relative bottom-10 rounded-t-xl shadow">
                   <header class="border-b border-dashed border-black">
