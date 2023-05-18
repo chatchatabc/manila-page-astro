@@ -22,7 +22,10 @@ const links = [
 ];
 ---
 
-<header class="z-[1] absolute top-0 w-screen group">
+<header
+  data-navbar
+  class="z-[500] fixed bg-opacity-100 top-0 w-screen group lg:p-8"
+>
   <!-- <div
     class="bg-gradient-to-b from-white to-transparent absolute h-full w-full opacity-50 pointer-events-none"
   >
@@ -33,16 +36,12 @@ const links = [
   </div> -->
   <div class="container mx-auto px-4 relative z-[1] lg:px-8">
     <!-- Desktop navbar -->
-    <nav class="hidden justify-between items-end flex-wrap lg:flex">
-      <div>
-        <a class="w-96 block mx-auto pt-4" href="/">
-          <Picture
-            breakpoints={[320, 768]}
-            src="/images/logo3.png"
-            alt="logo"
-          />
-        </a>
-      </div>
+    <nav class="hidden justify-between items-center flex-wrap lg:flex">
+      <a class="text-4xl font-bold text-red-700" href="/">
+        <span class="text-blue-700">Manila</span><span class="text-yellow-500"
+          >.</span
+        >Page
+      </a>
 
       <ul class="flex justify-center">
         {
@@ -50,7 +49,7 @@ const links = [
             return (
               <li>
                 <a
-                  class="block py-2 px-4 uppercase font-bold hover:bg-[#5C97BF] hover:text-white"
+                  class="block py-2 px-4 uppercase duration-300 font-bold hover:text-blue-500"
                   href={link.href}
                 >
                   {link.name}
@@ -114,6 +113,7 @@ const links = [
 </header>
 
 <script>
+  const navbar = document.querySelector("[data-navbar]")!;
   const nav = document.querySelector("#mobile-nav-menu")!;
   const bg = document.querySelector("#mobile-nav-menu-bg")!;
   const button = document.querySelector("button")!;
@@ -147,5 +147,23 @@ const links = [
     link.addEventListener("click", () => {
       navClose();
     });
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      navbar.classList.add("bg-primary");
+      navbar.classList.add("duration-500");
+      navbar.classList.add("shadow-2xl");
+      navbar.classList.add("lg:p-4");
+      navbar.classList.remove("lg:p-8");
+      navbar.classList.remove("duration-150");
+    } else {
+      navbar.classList.remove("bg-primary");
+      navbar.classList.remove("duration-500");
+      navbar.classList.remove("shadow-2xl");
+      navbar.classList.remove("lg:p-4");
+      navbar.classList.add("lg:p-8");
+      navbar.classList.add("duration-150");
+    }
   });
 </script>

@@ -2,6 +2,7 @@
 import Layout from "@layouts/layout.astro";
 import { Img } from "astro-imagetools/components";
 import { getCollection } from "astro:content";
+import { Picture } from "astro-imagetools/components";
 
 const placesCollection = await getCollection("places");
 const tripsCollection = await getCollection("trips");
@@ -20,6 +21,26 @@ const event2 = eventsCollection[4];
       src="/images/hero-bg.jpg"
       alt=""
     />
+
+    <div
+      class="bg-gradient-to-b from-primary via-transparent to-black absolute top-0 left-0 h-full w-full"
+    >
+    </div>
+
+    <div class="absolute px-8 bottom-0 pb-32 w-full text-white">
+      <h2 class="w-1/2 md:text-4xl lg:text-5xl">
+        Unlock the Secrets of Metro Manila: Your Ultimate Tourist Guide
+      </h2>
+      <p class="text-xl mt-4">
+        Dive deep into the hidden gems and insider tips of Metro Manila, the
+        vibrant capital of the Philippines, with our comprehensive tourist
+        guide.
+      </p>
+    </div>
+
+    <!-- <div class="absolute top-1/4">
+      <Picture src="/images/logo.png" alt="Manila Page" />
+    </div> -->
 
     <!-- Wave -->
     <div class="w-full absolute bottom-0 translate-y-1/2 z-[1]">
