@@ -2,7 +2,7 @@
 import { Picture } from "astro-imagetools/components";
 
 const links = [
-  { href: "/", name: "Home" },
+  // { href: "/", name: "Home" },
   {
     href: "/places",
     name: "Places to Visit",
@@ -19,14 +19,6 @@ const links = [
     href: "/trips",
     name: "Day Trips",
   },
-  {
-    href: "/#neighborhoods",
-    name: "Neighborhoods",
-  },
-  {
-    href: "/contact-us",
-    name: "Contact Us",
-  },
 ];
 ---
 
@@ -35,14 +27,14 @@ const links = [
     class="bg-gradient-to-b from-white to-transparent absolute h-full w-full opacity-50 pointer-events-none"
   >
   </div> -->
-  <div
+  <!-- <div
     class="bg-primary absolute h-full w-full origin-top opacity-50 backdrop-blur-3xl duration-500"
   >
-  </div>
+  </div> -->
   <div class="container mx-auto px-4 relative z-[1] lg:px-8">
     <!-- Desktop navbar -->
-    <nav class="hidden justify-center items-center flex-wrap lg:flex">
-      <div class="w-full">
+    <nav class="hidden justify-between items-end flex-wrap lg:flex">
+      <div>
         <a class="w-96 block mx-auto pt-4" href="/">
           <Picture
             breakpoints={[320, 768]}
