@@ -62,16 +62,44 @@ const event2 = eventsCollection[4];
 
   <!-- Places to Visit -->
   <section id="places-to-visit" class="relative mt-16 pb-16">
-    <header>
+    <!-- Header -->
+    <header class="px-4">
       <h2
         class="font-play relative z-[1] text-center text-3xl md:text-4xl lg:text-5xl"
       >
         Explore Destinations
       </h2>
+      <p class="text-center text-xl font-medium text-gray-800 mt-4">
+        Uncover breathtaking places that will leave you in awe
+      </p>
     </header>
 
+    <!-- Content -->
+    <section class="container mx-auto px-4 md:my-16 lg:px-8">
+      <figure class="flex flex-row-reverse flex-wrap items-center">
+        <!-- Right -->
+        <div class="my-16 w-full md:my-0 md:w-1/2">
+          <div class="h-96 border"></div>
+        </div>
+
+        <!-- Left -->
+        <figcaption class="w-full md:w-1/2">
+          <header>
+            <h3 class="text-4xl font-play font-bold">Ready to Explore?</h3>
+          </header>
+          <p class="text-lg mt-4">
+            Plan your next adventure and experience these incredible
+            destinations for yourself!
+          </p>
+          <button class="text-lg px-8 py-2 mt-4 bg-black text-white">
+            View More
+          </button>
+        </figcaption>
+      </figure>
+    </section>
+
     <!-- Carousel -->
-    <section
+    <!-- <section
       class="mx-auto container relative overflow-y-clip overflow-x-hidden"
     >
       <div
@@ -132,16 +160,7 @@ const event2 = eventsCollection[4];
         class="bg-primary absolute w-[125%] rounded-[50%] left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 h-24"
       >
       </div>
-      <!-- <div
-        class="h-24 rounded-[50%] w-[125%] top-96 left-1/2 -translate-x-1/2 absolute mx-auto bg-background -translate-y-1/2"
-      >
-        <h2
-          class="text-center absolute top-1/2 -translate-y-1/2 w-full font-play font-bold text-[#264F6E] text-5xl md:text-6xl lg:text-7xl"
-        >
-          Places to Visit
-        </h2>
-      </div> -->
-    </section>
+    </section> -->
   </section>
 
   <!-- Event & Festivals Section -->
@@ -174,9 +193,9 @@ const event2 = eventsCollection[4];
               <h2 class="text-3xl">{event1.data.title}</h2>
               <p class="text-2xl text-end font-alex">
                 {
-                  new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(
-                    event1.data.date
-                  )
+                  new Intl.DateTimeFormat("en", {
+                    dateStyle: "medium",
+                  }).format(event1.data.date)
                 }
               </p>
             </header>
@@ -393,119 +412,118 @@ const event2 = eventsCollection[4];
       </section>
     </section>
   </section>
-
-  <script>
-    import L from "leaflet";
-    import "leaflet/dist/leaflet.css";
-    import metroManilaCities from "@data/metro-manila.json";
-    import metroManilaJson from "@data/metro-manila-info.json";
-
-    const metroManila = metroManilaJson as Record<string, any>;
-
-    const neighborhoodSummary = document.querySelector<HTMLElement>(
-      "[data-neighborhood-summary]"
-    )!;
-
-    // Create a Leaflet map
-    const map = L.map("map").setView([14.5801, 121.0223], 11);
-
-    // Add a TileLayer to the map
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; Philippines Administrative Boundaries JSON Maps",
-    }).addTo(map);
-
-    let geojson = L.geoJson(metroManilaCities, {
-      style: style,
-      onEachFeature: onEachFeature,
-    }).addTo(map);
-
-    function highlightFeature(e: any) {
-      let layer = e.target;
-
-      layer.setStyle({
-        weight: 5,
-        color: "#666",
-        dashArray: "",
-        fillOpacity: 0.7,
-      });
-
-      layer.bringToFront();
-    }
-
-    function resetHighlight(e: any) {
-      geojson.resetStyle(e.target);
-    }
-
-    function zoomToFeature(e: any) {
-      map.fitBounds(e.target.getBounds());
-    }
-
-    function onEachFeature(feature: any, layer: any) {
-      layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: (e: any) => {
-          neighborhoodSummary.innerHTML =
-            metroManila[feature.properties.ADM3_EN];
-          neighborhoodSummary.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-          zoomToFeature(e);
-        },
-      });
-    }
-
-    function getColor(name: string) {
-      switch (name) {
-        case "Caloocan":
-          return "#ff0000";
-        case "Manila":
-          return "#ff8000";
-        case "Mandaluyong":
-          return "#ffff00";
-        case "Marikina":
-          return "#00ff00";
-        case "Makati":
-          return "#00ffff";
-        case "Malabon":
-          return "#0000ff";
-        case "Muntinlupa":
-          return "#8000ff";
-        case "Navotas":
-          return "#ff00ff";
-        case "Parañaque":
-          return "#ff0080";
-        case "Pasay":
-          return "#ff8000";
-        case "Pasig":
-          return "#ffff00";
-        case "Quezon City":
-          return "#00ff00";
-        case "San Juan":
-          return "#00ffff";
-        case "Taguig":
-          return "#0000ff";
-        case "Valenzuela":
-          return "#8000ff";
-        case "Las Piñas":
-          return "#ff00ff";
-        case "Pateros":
-          return "#ff0080";
-        default:
-          return "#000000";
-      }
-    }
-
-    function style(feature: Record<string, any>) {
-      return {
-        fillColor: getColor(feature.properties.ADM3_EN),
-        weight: 2,
-        opacity: 1,
-        color: "black",
-        dashArray: "3",
-        fillOpacity: 0.5,
-      };
-    }
-  </script>
 </Layout>
+
+<script>
+  import L from "leaflet";
+  import "leaflet/dist/leaflet.css";
+  import metroManilaCities from "@data/metro-manila.json";
+  import metroManilaJson from "@data/metro-manila-info.json";
+
+  const metroManila = metroManilaJson as Record<string, any>;
+
+  const neighborhoodSummary = document.querySelector<HTMLElement>(
+    "[data-neighborhood-summary]"
+  )!;
+
+  // Create a Leaflet map
+  const map = L.map("map").setView([14.5801, 121.0223], 11);
+
+  // Add a TileLayer to the map
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; Philippines Administrative Boundaries JSON Maps",
+  }).addTo(map);
+
+  let geojson = L.geoJson(metroManilaCities, {
+    style: style,
+    onEachFeature: onEachFeature,
+  }).addTo(map);
+
+  function highlightFeature(e: any) {
+    let layer = e.target;
+
+    layer.setStyle({
+      weight: 5,
+      color: "#666",
+      dashArray: "",
+      fillOpacity: 0.7,
+    });
+
+    layer.bringToFront();
+  }
+
+  function resetHighlight(e: any) {
+    geojson.resetStyle(e.target);
+  }
+
+  function zoomToFeature(e: any) {
+    map.fitBounds(e.target.getBounds());
+  }
+
+  function onEachFeature(feature: any, layer: any) {
+    layer.on({
+      mouseover: highlightFeature,
+      mouseout: resetHighlight,
+      click: (e: any) => {
+        neighborhoodSummary.innerHTML = metroManila[feature.properties.ADM3_EN];
+        neighborhoodSummary.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        zoomToFeature(e);
+      },
+    });
+  }
+
+  function getColor(name: string) {
+    switch (name) {
+      case "Caloocan":
+        return "#ff0000";
+      case "Manila":
+        return "#ff8000";
+      case "Mandaluyong":
+        return "#ffff00";
+      case "Marikina":
+        return "#00ff00";
+      case "Makati":
+        return "#00ffff";
+      case "Malabon":
+        return "#0000ff";
+      case "Muntinlupa":
+        return "#8000ff";
+      case "Navotas":
+        return "#ff00ff";
+      case "Parañaque":
+        return "#ff0080";
+      case "Pasay":
+        return "#ff8000";
+      case "Pasig":
+        return "#ffff00";
+      case "Quezon City":
+        return "#00ff00";
+      case "San Juan":
+        return "#00ffff";
+      case "Taguig":
+        return "#0000ff";
+      case "Valenzuela":
+        return "#8000ff";
+      case "Las Piñas":
+        return "#ff00ff";
+      case "Pateros":
+        return "#ff0080";
+      default:
+        return "#000000";
+    }
+  }
+
+  function style(feature: Record<string, any>) {
+    return {
+      fillColor: getColor(feature.properties.ADM3_EN),
+      weight: 2,
+      opacity: 1,
+      color: "black",
+      dashArray: "3",
+      fillOpacity: 0.5,
+    };
+  }
+</script>
