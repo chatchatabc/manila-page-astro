@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         alex: ["Alex Brush", "cursive"],
+        play: ["Playfair Display", "serif"],
       },
       colors: {
         primary: "#BFD7EA",
