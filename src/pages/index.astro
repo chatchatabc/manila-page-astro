@@ -13,7 +13,7 @@ const event2 = eventsCollection[4];
 <Layout>
   <!-- Hero Section -->
   <section
-    class="h-screen relative max-h-[600px] rounded-b-[4rem] overflow-hidden lg:max-h-[700px]"
+    class="h-screen relative max-h-[600px] overflow-hidden rounded-b-[2rem] lg:rounded-b-[4rem] lg:max-h-[700px]"
   >
     <!-- Background Image -->
     <Img
@@ -61,9 +61,9 @@ const event2 = eventsCollection[4];
   </section>
 
   <!-- Places to Visit -->
-  <section id="places-to-visit" class="relative mt-16 pb-16">
+  <section id="places-to-visit" class="relative container mx-auto">
     <!-- Header -->
-    <header class="px-4">
+    <header class="px-4 mt-16 mb-8 lg:my-16">
       <h2
         class="font-play relative z-[1] text-center text-3xl md:text-4xl lg:text-5xl"
       >
@@ -75,31 +75,73 @@ const event2 = eventsCollection[4];
     </header>
 
     <!-- Content -->
-    <section class="container mx-auto px-4 md:my-16 lg:px-8">
-      <figure class="flex flex-row-reverse flex-wrap items-center">
-        <!-- Right -->
-        <div class="my-16 w-full md:my-0 md:w-1/2">
-          <div class="h-96 border"></div>
-        </div>
+    <section class="flex flex-wrap container mx-auto px-4 mb-24 lg:px-8">
+      {
+        [...placesCollection].splice(0, 2).map((place) => {
+          return (
+            <article class="p-2 flex w-full group md:w-1/2 xl:w-1/4">
+              <figure class="relative flex w-full overflow-hidden p-4 pt-16 rounded-2xl md:p-8 md:pt-16 lg:pt-32">
+                <div class="absolute top-0 left-0 h-full w-full duration-1000 group-hover:scale-110">
+                  <div class="absolute top-0 left-0 h-full w-full bg-black opacity-50" />
+                  <Img src={place.data.featuredImage} alt="" />
+                </div>
+                <figcaption class="relative text-white">
+                  <header>
+                    <h3 class="text-3xl font-play font-bold line-clamp-1">
+                      {place.data.title}
+                    </h3>
+                  </header>
+                  <p class="text-lg mt-4 line-clamp-3">{place.data.summary}</p>
+                  <a
+                    href={`/places/${place.slug}`}
+                    class="block w-fit text-lg px-8 py-2 mt-4 duration-300 border-white border-2 bg-transparent text-white hover:text-black hover:border-transparent hover:bg-white"
+                  >
+                    Read More
+                  </a>
+                </figcaption>
+              </figure>
+            </article>
+          );
+        })
+      }
 
-        <!-- Left -->
-        <figcaption class="w-full md:w-1/2">
-          <header>
-            <h3 class="text-4xl font-play font-bold">Ready to Explore?</h3>
-          </header>
-          <p class="text-lg mt-4">
-            Plan your next adventure and experience these incredible
-            destinations for yourself!
-          </p>
-          <button class="text-lg px-8 py-2 mt-4 bg-black text-white">
-            View More
-          </button>
-        </figcaption>
-      </figure>
+      <!-- View More -->
+      <article class="p-2 flex w-full group xl:w-1/2">
+        <figure
+          class="relative flex w-full overflow-hidden p-4 pt-16 rounded-2xl md:pt-16 md:p-8 lg:pt-32"
+        >
+          <!-- Banner -->
+          <div
+            class="absolute top-0 left-0 h-full w-full duration-1000 group-hover:scale-110"
+          >
+            <div
+              class="absolute top-0 left-0 h-full w-full bg-black opacity-50"
+            >
+            </div>
+            <Img src="/images/places/rizal-park.png" alt="" />
+          </div>
+          <figcaption class="relative text-white">
+            <header>
+              <h3 class="text-3xl font-play font-bold">Ready to Explore?</h3>
+            </header>
+            <p class="text-lg mt-4">
+              Plan your next adventure and experience these incredible
+              destinations for yourself!
+            </p>
+            <a
+              href="/places"
+              class="block w-fit text-lg px-8 py-2 mt-4 duration-300 border-white border-2 bg-transparent text-white hover:text-black hover:border-transparent hover:bg-white"
+            >
+              View Destinations
+            </a>
+          </figcaption>
+        </figure>
+      </article>
     </section>
+  </section>
 
-    <!-- Carousel -->
-    <!-- <section
+  <!-- Carousel -->
+  <!-- <section
       class="mx-auto container relative overflow-y-clip overflow-x-hidden"
     >
       <div
@@ -161,7 +203,6 @@ const event2 = eventsCollection[4];
       >
       </div>
     </section> -->
-  </section>
 
   <!-- Event & Festivals Section -->
   <section id="events-and-festivals" class="pt-16 border-t-8">
