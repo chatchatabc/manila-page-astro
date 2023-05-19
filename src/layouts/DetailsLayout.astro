@@ -27,17 +27,18 @@ const { Content } = await place.render();
     <div class="relative pb-[100%] md:pb-[50%] lg:pb-[35%]">
       <!-- Background -->
       <div class="absolute w-full h-full">
+        <div
+          class="bg-gradient-to-b from-bg1 via-transparent to-black absolute opacity-50 top-0 left-0 h-full w-full"
+        >
+        </div>
         <Img src={place.data.featuredImage} alt={place.data.title} />
       </div>
 
       <!-- Text -->
-      <div
-        class="bg-gradient-to-b opacity-75 from-cl via-transparent to-cd absolute h-full w-full bg-opacity-50 flex items-center justify-center"
-      >
+      <div class="absolute h-full w-full flex items-center justify-center">
         <div class="p-8 rounded-lg overflow-hidden border relative">
-          <div class="bg-black opacity-50 absolute h-full w-full top-0 left-0">
-          </div>
-          <h1 class="relative text-white text-4xl font-bold">
+          <div class="bg-bg1 absolute h-full w-full top-0 left-0"></div>
+          <h1 class="relative text-t1 text-4xl font-bold">
             {place.data.title}
           </h1>
         </div>
@@ -46,13 +47,13 @@ const { Content } = await place.render();
   </section>
 
   <!-- Content -->
-  <section class="bg-white pb-16">
-    <section class="max-w-7xl py-4 mx-auto px-4 lg:px-8">
+  <section class="pb-16">
+    <section class="max-w-7xl py-4 text-c1 mx-auto px-4 lg:px-8">
       <Breadcrumbs />
     </section>
 
     <article class="max-w-7xl mx-auto px-4 lg:px-8">
-      <section class="flex flex-wrap p-4 rounded-xl bg-cl">
+      <section class="flex flex-wrap p-4 rounded-xl bg-bg1">
         <!-- Left -->
         <section class="w-full lg:pr-4 lg:w-2/3">
           <Markdown>
