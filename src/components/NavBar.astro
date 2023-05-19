@@ -47,7 +47,7 @@ const links = [
             return (
               <li>
                 <a
-                  class="block py-2 px-4 uppercase duration-300 font-bold hover:text-blue-500"
+                  class="block py-2 px-4 text-ac1 uppercase duration-300 font-bold hover:text-ac2"
                   href={link.href}
                 >
                   {link.name}
@@ -149,14 +149,14 @@ const links = [
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
-      navbar.classList.add("bg-primary");
+      navbar.classList.add("bg-cl");
       navbar.classList.add("duration-500");
       navbar.classList.add("shadow-2xl");
       navbar.classList.add("lg:p-4");
       navbar.classList.remove("lg:p-8");
       navbar.classList.remove("duration-150");
     } else {
-      navbar.classList.remove("bg-primary");
+      navbar.classList.remove("bg-cl");
       navbar.classList.remove("duration-500");
       navbar.classList.remove("shadow-2xl");
       navbar.classList.remove("lg:p-4");

@@ -24,14 +24,14 @@ const event2 = eventsCollection[4];
     />
 
     <div
-      class="bg-gradient-to-b from-primary via-transparent to-black absolute top-0 left-0 h-full w-full"
+      class="bg-gradient-to-b from-cl via-transparent to-cd opacity-50 absolute top-0 left-0 h-full w-full"
     >
     </div>
 
     <div class="absolute px-8 bottom-1/2 translate-y-1/2 w-full text-white">
       <div class="container mx-auto lg:px-8">
         <h2
-          class="font-play font-bold max-w-2xl text-4xl md:text-5xl lg:text-6xl"
+          class="text-white font-play font-bold max-w-2xl text-4xl md:text-5xl lg:text-6xl"
         >
           Unlock the Secrets of Metro Manila: Your Ultimate Tourist Guide
         </h2>
@@ -42,22 +42,6 @@ const event2 = eventsCollection[4];
         </p>
       </div>
     </div>
-
-    <!-- <div class="absolute top-1/4">
-      <Picture src="/images/logo.png" alt="Manila Page" />
-    </div> -->
-
-    <!-- Wave -->
-    <!-- <div class="w-full absolute bottom-0 translate-y-1/2 z-[1]">
-      <div class="top-0 left-0 absolute w-full h-full">
-        <img class="w-full h-full object-cover" src="/images/wave.svg" alt="" />
-      </div>
-      <h1
-        class="text-white relative text-center font-play font-bold text-3xl pt-32 pb-24 px-4 lg:px-8 lg:text-5xl lg:pt-24 lg:pb-16"
-      >
-        Explore Destinations and Invite Friends & Plan Together
-      </h1>
-    </div> -->
   </section>
 
   <!-- Places to Visit -->
@@ -65,11 +49,11 @@ const event2 = eventsCollection[4];
     <!-- Header -->
     <header class="px-4 mt-16 mb-8 lg:my-16">
       <h2
-        class="font-play relative z-[1] text-center text-3xl md:text-4xl lg:text-5xl"
+        class="text-cd font-bold font-play relative z-[1] text-center text-3xl md:text-4xl lg:text-5xl"
       >
         Explore Destinations
       </h2>
-      <p class="text-center text-xl font-medium text-gray-800 mt-4">
+      <p class="text-center text-xl font-medium text-black mt-4">
         Uncover breathtaking places that will leave you in awe
       </p>
     </header>
@@ -82,7 +66,7 @@ const event2 = eventsCollection[4];
             <article class="p-2 flex w-full group md:w-1/2 xl:w-1/4">
               <figure class="relative flex w-full overflow-hidden p-4 pt-16 rounded-2xl md:p-8 md:pt-16 lg:pt-32">
                 <div class="absolute top-0 left-0 h-full w-full duration-1000 group-hover:scale-110">
-                  <div class="absolute top-0 left-0 h-full w-full bg-black opacity-50" />
+                  <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-cd to-black opacity-50" />
                   <Img src={place.data.featuredImage} alt="" />
                 </div>
                 <figcaption class="relative text-white">
@@ -94,7 +78,7 @@ const event2 = eventsCollection[4];
                   <p class="text-lg mt-4 line-clamp-3">{place.data.summary}</p>
                   <a
                     href={`/places/${place.slug}`}
-                    class="block w-fit text-lg px-8 py-2 mt-4 duration-300 border-white border-2 bg-transparent text-white hover:text-black hover:border-transparent hover:bg-white"
+                    class="block w-fit text-lg px-8 py-2 mt-4 duration-300 border-white border-2 bg-ac1 text-white hover:text-ac2 hover:border-transparent hover:bg-white"
                   >
                     Read More
                   </a>
@@ -115,7 +99,7 @@ const event2 = eventsCollection[4];
             class="absolute top-0 left-0 h-full w-full duration-1000 group-hover:scale-110"
           >
             <div
-              class="absolute top-0 left-0 h-full w-full bg-black opacity-50"
+              class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-c2 to-black opacity-50"
             >
             </div>
             <Img src="/images/places/rizal-park.png" alt="" />
@@ -130,7 +114,7 @@ const event2 = eventsCollection[4];
             </p>
             <a
               href="/places"
-              class="block w-fit text-lg px-8 py-2 mt-4 duration-300 border-white border-2 bg-transparent text-white hover:text-black hover:border-transparent hover:bg-white"
+              class="block w-fit text-lg px-8 py-2 mt-4 duration-300 border-white border-2 bg-ac1 text-white hover:text-ac2 hover:border-transparent hover:bg-white"
             >
               View Destinations
             </a>
@@ -140,77 +124,11 @@ const event2 = eventsCollection[4];
     </section>
   </section>
 
-  <!-- Carousel -->
-  <!-- <section
-      class="mx-auto container relative overflow-y-clip overflow-x-hidden"
-    >
-      <div
-        class="bg-background flex justify-center items-center h-24 absolute w-[125%] top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-[50%]"
-      >
-      </div>
-      <ul class="flex snap-x overflow-x-auto">
-        {
-          placesCollection.map((place) => {
-            const { title, summary, featuredImage } = place.data;
-            return (
-              <li class="snap-center w-full flex-shrink-0 px-1 md:w-1/2 lg:w-1/4">
-                <figure>
-                  <div class="h-96">
-                    <Img
-                      breakpoints={[320, 768]}
-                      src={`${featuredImage}`}
-                      alt={title}
-                    />
-                  </div>
-                  <figcaption class="bg-[#ABC0D1] px-4 pt-8 pb-24">
-                    <section class="flex justify-center space-x-4">
-                      <div class="flex space-x-2">
-                        <img
-                          class="w-6 h-6"
-                          src="/images/share.svg"
-                          alt="Share icon"
-                        />
-                        <span>300</span>
-                      </div>
-                      <div class="flex space-x-2">
-                        <img
-                          class="w-6 h-6"
-                          src="/images/heart.svg"
-                          alt="Share icon"
-                        />
-                        <span>128</span>
-                      </div>
-                    </section>
-                    <header class="mt-2">
-                      <h3 class="text-center text-xl font-medium">{title}</h3>
-                    </header>
-                    <p class="line-clamp-4 text-gray-900">{summary}</p>
-                    <a
-                      href={`/places/${place.slug}`}
-                      class="px-4 py-1 bg-blue-500 text-white rounded-md mx-auto block w-fit mt-4"
-                    >
-                      Read More
-                    </a>
-                  </figcaption>
-                </figure>
-              </li>
-            );
-          })
-        }
-      </ul>
-      <div
-        class="bg-primary absolute w-[125%] rounded-[50%] left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 h-24"
-      >
-      </div>
-    </section> -->
-
   <!-- Event & Festivals Section -->
-  <section id="events-and-festivals" class="pt-16 border-t-8">
+  <section id="events-and-festivals">
     <header>
-      <h2
-        class="font-play font-bold text-[#264F6E] text-5xl text-center lg:text-7xl"
-      >
-        Events and Festivals in <span class="text-white">January</span>
+      <h2 class="font-play font-bold text-cd text-5xl text-center lg:text-7xl">
+        Events and Festivals in <span class="text-c2">January</span>
       </h2>
     </header>
     <section class="flex flex-wrap container mx-auto mt-8 px-4 lg:px-8">
