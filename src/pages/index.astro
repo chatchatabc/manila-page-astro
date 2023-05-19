@@ -24,18 +24,18 @@ const event2 = eventsCollection[4];
     />
 
     <div
-      class="bg-gradient-to-b from-cl via-transparent to-cd opacity-50 absolute top-0 left-0 h-full w-full"
+      class="bg-gradient-to-b from-bg1 via-transparent to-black absolute top-0 left-0 h-full w-full"
     >
     </div>
 
-    <div class="absolute px-8 bottom-1/2 translate-y-1/2 w-full text-white">
+    <div class="absolute px-8 bottom-1/2 translate-y-1/2 w-full">
       <div class="container mx-auto lg:px-8">
         <h2
           class="text-white font-play font-bold max-w-2xl text-4xl md:text-5xl lg:text-6xl"
         >
           Unlock the Secrets of Metro Manila: Your Ultimate Tourist Guide
         </h2>
-        <p class="text-xl max-w-3xl mt-4">
+        <p class="text-xl text-white max-w-3xl mt-4">
           Dive deep into the hidden gems and insider tips of Metro Manila, the
           vibrant capital of the Philippines, with our comprehensive tourist
           guide.
@@ -45,90 +45,90 @@ const event2 = eventsCollection[4];
   </section>
 
   <!-- Places to Visit -->
-  <section id="places-to-visit" class="relative container mx-auto">
-    <!-- Header -->
-    <header class="px-4 mt-16 mb-8 lg:my-16">
-      <h2
-        class="text-cd font-bold font-play relative z-[1] text-center text-3xl md:text-4xl lg:text-5xl"
-      >
-        Explore Destinations
-      </h2>
-      <p class="text-center text-xl font-medium text-black mt-4">
-        Uncover breathtaking places that will leave you in awe
-      </p>
-    </header>
-
-    <!-- Content -->
-    <section class="flex flex-wrap container mx-auto px-4 mb-24 lg:px-8">
-      {
-        [...placesCollection].splice(0, 2).map((place) => {
-          return (
-            <article class="p-2 flex w-full group md:w-1/2 xl:w-1/4">
-              <figure class="relative flex w-full overflow-hidden p-4 pt-16 rounded-2xl md:p-8 md:pt-16 lg:pt-32">
-                <div class="absolute top-0 left-0 h-full w-full duration-1000 group-hover:scale-110">
-                  <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-cd to-black opacity-50" />
-                  <Img src={place.data.featuredImage} alt="" />
-                </div>
-                <figcaption class="relative text-white">
-                  <header>
-                    <h3 class="text-3xl font-play font-bold line-clamp-1">
-                      {place.data.title}
-                    </h3>
-                  </header>
-                  <p class="text-lg mt-4 line-clamp-3">{place.data.summary}</p>
-                  <a
-                    href={`/places/${place.slug}`}
-                    class="block w-fit text-lg px-8 py-2 mt-4 duration-300 border-white border-2 bg-ac1 text-white hover:text-ac2 hover:border-transparent hover:bg-white"
-                  >
-                    Read More
-                  </a>
-                </figcaption>
-              </figure>
-            </article>
-          );
-        })
-      }
-
-      <!-- View More -->
-      <article class="p-2 flex w-full group xl:w-1/2">
-        <figure
-          class="relative flex w-full overflow-hidden p-4 pt-16 rounded-2xl md:pt-16 md:p-8 lg:pt-32"
+  <section id="places-to-visit" class="pb-16">
+    <!-- Container -->
+    <section class="relative container mx-auto">
+      <!-- Header -->
+      <header class="px-4 mt-16 my-16">
+        <h2
+          class="text-c1 font-bold font-play relative z-[1] text-center text-3xl md:text-4xl lg:text-5xl"
         >
-          <!-- Banner -->
-          <div
-            class="absolute top-0 left-0 h-full w-full duration-1000 group-hover:scale-110"
+          Explore Destinations
+        </h2>
+        <p class="text-center text-xl font-medium text-c2 mt-4">
+          Uncover breathtaking places that will leave you in awe
+        </p>
+      </header>
+
+      <!-- Content -->
+      <section class="flex flex-wrap container mx-auto px-4 lg:px-8">
+        {
+          [...placesCollection].splice(0, 2).map((place) => {
+            return (
+              <article class="p-2 flex w-full group md:w-1/2 xl:w-1/4">
+                <a href={`/places/${place.slug}`} class="w-full flex">
+                  <figure class="relative flex items-end w-full overflow-hidden p-1 pt-16 rounded-2xl duration-300 md:pt-16 lg:pt-32 group-hover:shadow-c3 group-hover:shadow-[0_0_0_5px]">
+                    <div class="absolute top-0 left-0 h-full w-full duration-300 group-hover:scale-110">
+                      <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-black opacity-25" />
+                      <Img src={place.data.featuredImage} alt="" />
+                    </div>
+                    <figcaption class="relative p-4 text-white">
+                      <header>
+                        <h3 class="text-3xl font-play font-bold">
+                          {place.data.title}
+                        </h3>
+                      </header>
+                    </figcaption>
+                  </figure>
+                </a>
+              </article>
+            );
+          })
+        }
+
+        <!-- View More -->
+        <article class="p-2 flex w-full group xl:w-1/2">
+          <a href="/places" class="w-full flex">
+            <figure
+              class="relative flex w-full overflow-hidden p-4 pt-16 rounded-2xl duration-300 md:pt-16 md:p-8 lg:pt-32 group-hover:shadow-c3 group-hover:shadow-[0_0_0_5px]"
+            >
+              <!-- Banner -->
+              <div
+                class="absolute top-0 left-0 h-full w-full duration-300 group-hover:scale-110"
+              >
+                <div
+                  class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-c1 via-black to-black opacity-50"
+                >
+                </div>
+                <Img src="/images/places/rizal-park.png" alt="" />
+              </div>
+              <figcaption class="relative text-white">
+                <header>
+                  <h3 class="text-3xl font-play font-bold">
+                    Ready to Explore?
+                  </h3>
+                </header>
+                <p class="text-lg mt-4">
+                  Plan your next adventure and experience these incredible
+                  destinations for yourself!
+                </p>
+              </figcaption>
+            </figure></a
           >
-            <div
-              class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-c2 to-black opacity-50"
-            >
-            </div>
-            <Img src="/images/places/rizal-park.png" alt="" />
-          </div>
-          <figcaption class="relative text-white">
-            <header>
-              <h3 class="text-3xl font-play font-bold">Ready to Explore?</h3>
-            </header>
-            <p class="text-lg mt-4">
-              Plan your next adventure and experience these incredible
-              destinations for yourself!
-            </p>
-            <a
-              href="/places"
-              class="block w-fit text-lg px-8 py-2 mt-4 duration-300 border-white border-2 bg-ac1 text-white hover:text-ac2 hover:border-transparent hover:bg-white"
-            >
-              View Destinations
-            </a>
-          </figcaption>
-        </figure>
-      </article>
+        </article>
+      </section>
     </section>
   </section>
 
   <!-- Event & Festivals Section -->
-  <section id="events-and-festivals">
+  <section id="events-and-festivals" class="bg-bg1 py-16">
     <header>
-      <h2 class="font-play font-bold text-cd text-5xl text-center lg:text-7xl">
-        Events and Festivals in <span class="text-c2">January</span>
+      <h2
+        class="font-play font-bold text-c2 text-3xl text-center md:text-4xl lg:text-5xl"
+      >
+        <span class="text-c1">Events</span> and <span class="text-c3"
+          >Festivals</span
+        >
       </h2>
     </header>
     <section class="flex flex-wrap container mx-auto mt-8 px-4 lg:px-8">
