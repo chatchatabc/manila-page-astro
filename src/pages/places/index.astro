@@ -23,22 +23,22 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
     </div>
 
     <div
-      class="absolute left-0 top-0 bg-gradient-to-b from-cl via-transparent to-cd h-full w-full"
+      class="absolute left-0 top-0 bg-gradient-to-b from-bg1 via-transparent to-black h-full w-full"
     >
     </div>
 
     <div class="absolute bottom-0 pb-[10%] w-full">
       <div class="absolute w-full h-full">
         <div
-          class="absolute left-0 w-1/2 h-full bg-cd opacity-70 triangle-side-clip"
+          class="absolute left-0 w-1/2 h-full bg-c1 opacity-70 triangle-side-clip"
         >
         </div>
         <div
-          class="absolute left-1/2 -translate-x-1/2 bottom-0 w-full h-1/2 bg-cl triangle-clip"
+          class="absolute left-1/2 -translate-x-1/2 bottom-0 w-full h-1/2 bg-bg triangle-clip"
         >
         </div>
         <div
-          class="absolute right-0 w-1/2 h-full bg-cd opacity-70 triangle-side-clip rotate-180"
+          class="absolute right-0 w-1/2 h-full bg-c1 opacity-70 triangle-side-clip rotate-180"
         >
         </div>
       </div>
@@ -50,7 +50,7 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
     <section class="relative lg:-mt-8">
       <!-- Section Title -->
       <header>
-        <h2 class="text-5xl font-play font-bold text-cd text-center">
+        <h2 class="text-5xl font-play font-bold text-c1 text-center">
           Featured Places
         </h2>
         <p class="text-gray-900 text-lg text-center">
@@ -64,7 +64,7 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
           [...placesCollection].splice(0, 3).map((place) => {
             return (
               <li class="p-1 w-full flex-shrink-0 md:w-1/2 lg:w-1/3 xl:p-2">
-                <figure class="bg-white text-black rounded-xl group">
+                <figure class="bg-bg1 text-black rounded-xl group">
                   <div class="relative pb-[65%] overflow-hidden rounded-xl">
                     <div class="absolute top-0 left-0 w-full h-full duration-500 group-hover:scale-110">
                       <Img
@@ -83,7 +83,7 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
                     <p class="line-clamp-4">{place.data.summary}</p>
                     <a
                       href={`${fixedPathname}/${place.slug}`}
-                      class="mt-4 bg-ac1 text-white mx-auto block w-fit px-4 py-1 rounded-md"
+                      class="mt-4 bg-c2 text-white mx-auto block w-fit px-4 py-1 rounded-md"
                     >
                       View more
                     </a>
@@ -100,7 +100,7 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
     <section>
       <!-- Section Title -->
       <header>
-        <h2 class="text-5xl text-cd font-bold font-play text-center">
+        <h2 class="text-5xl text-c1 font-bold font-play text-center">
           Museums for All Ages
         </h2>
         <p class="text-gray-900 text-lg text-center">
@@ -145,14 +145,14 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
     </section>
 
     <!-- Intramuros Section -->
-    <section class="bg-white rounded-xl overflow-hidden flex flex-wrap">
+    <section class="bg-bg2 rounded-xl overflow-hidden flex flex-wrap">
       <!-- Left -->
       <section
         class="flex flex-col justify-center w-full p-8 md:p-12 lg:p-16 lg:w-1/3"
       >
         <!-- Section Title -->
         <header>
-          <h2 class="text-5xl font-play font-bold text-cd">
+          <h2 class="text-5xl font-play font-bold text-t2">
             Rich History of Intramuros
           </h2>
         </header>
@@ -209,7 +209,7 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
     <section>
       <!-- Section Title -->
       <header>
-        <h2 class="text-5xl font-play text-cd font-bold text-center">
+        <h2 class="text-5xl font-play text-c1 font-bold text-center">
           Metro Manila Market Adventures
         </h2>
         <p class="text-gray-900 text-center">
@@ -227,7 +227,7 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
             .map((place) => {
               return (
                 <li class="p-1 w-full flex-shrink-0 md:w-1/2 lg:w-1/3 xl:p-2">
-                  <figure class="bg-white text-black rounded-xl group">
+                  <figure class="bg-bg1 text-black rounded-xl group">
                     <div class="relative pb-[65%] overflow-hidden rounded-xl">
                       <div class="absolute top-0 left-0 w-full h-full duration-500 group-hover:scale-110">
                         <Img
@@ -246,7 +246,7 @@ const fixedPathname = utilRemoveTrailSlash(pathname);
                       <p class="line-clamp-4">{place.data.summary}</p>
                       <a
                         href={`${fixedPathname}/${place.slug}`}
-                        class="mt-4 bg-ac1 text-white mx-auto w-fit block px-4 py-1 rounded-md"
+                        class="mt-4 bg-c2 text-white mx-auto w-fit block px-4 py-1 rounded-md"
                       >
                         View more
                       </a>
