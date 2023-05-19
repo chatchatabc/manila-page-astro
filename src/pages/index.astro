@@ -124,11 +124,9 @@ const event2 = eventsCollection[4];
   <section id="events-and-festivals" class="bg-bg1 py-16">
     <header>
       <h2
-        class="font-play font-bold text-c2 text-3xl text-center md:text-4xl lg:text-5xl"
+        class="font-play font-bold text-t2 text-3xl text-center md:text-4xl lg:text-5xl"
       >
-        <span class="text-c1">Events</span> and <span class="text-c3"
-          >Festivals</span
-        >
+        Events and Festivals
       </h2>
     </header>
     <section class="flex flex-wrap container mx-auto mt-8 px-4 lg:px-8">
@@ -274,7 +272,7 @@ const event2 = eventsCollection[4];
         <Img breakpoints={[320, 768]} src="/images/day-trips-bg.png" alt="" />
       </div>
       <h1
-        class="shadow-xl w-2/3 mx-auto text-center bottom-0 translate-y-1/2 text-[#264F6E] bg-[#BFD7EA] rounded-3xl absolute py-8 left-0 right-0 font-alex text-5xl lg:text-7xl"
+        class="shadow-xl w-2/ font-bold mx-auto text-center bottom-0 translate-y-1/2 text-t1 bg-bg1 rounded-3xl absolute py-8 left-0 right-0 font-play text:3xl md:text-4xl lg:text-5xl"
       >
         Day Trips
       </h1>
@@ -307,7 +305,7 @@ const event2 = eventsCollection[4];
                     alt={title}
                   />
                 </div>
-                <figcaption class="px-2 w-3/4 mx-auto bg-white relative bottom-10 rounded-t-xl shadow">
+                <figcaption class="px-2 w-3/4 mx-auto bg-bg1 relative bottom-10 rounded-t-xl shadow">
                   <header class="border-b border-dashed border-black">
                     <h2
                       title={title}
@@ -331,19 +329,19 @@ const event2 = eventsCollection[4];
   <!-- Neighborhoods -->
   <section id="neighborhoods" class="mx-auto container mt-8 px-4 lg:px-8">
     <header>
-      <h1 class="text-7xl text-[#264F6E] font-alex">Neighborhoods</h1>
+      <h1 class="text-c1 font-bold font-play text-3xl md:text-4xl lg:text-5xl">
+        Neighborhoods
+      </h1>
     </header>
-    <section class="flex flex-row-reverse relative flex-wrap">
+
+    <section class="flex mt-4 flex-row-reverse relative flex-wrap">
       <div class="absolute w-full h-full z-[-1]">
         <Img src="/images/neighborhoods-bg.jpg" alt="" />
       </div>
 
       <section class="w-full md:w-1/2">
         <article class="p-8">
-          <p
-            data-neighborhood-summary
-            class="bg-[#2B5F8F] p-2 text-white rounded-xl"
-          >
+          <p data-neighborhood-summary class="bg-bg1 p-2 text-black rounded-xl">
             Manila is the capital city of the Philippines and is known for its
             rich history, diverse culture, and vibrant atmosphere. It is a
             bustling metropolis that serves as the economic, political, and
@@ -356,7 +354,7 @@ const event2 = eventsCollection[4];
             the world.
           </p>
           <button
-            class="mx-auto block w-fit py-2 px-4 mt-2 bg-[#A426B8] text-white rounded-md"
+            class="mx-auto block w-fit py-2 px-4 mt-2 bg-c2 text-white rounded-md"
           >
             Explore Manila
           </button>
